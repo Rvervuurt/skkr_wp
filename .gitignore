@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+mix-manifest.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+*.log

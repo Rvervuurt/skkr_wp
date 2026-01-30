@@ -1,0 +1,27 @@
+.sk-body .sk-btn {
+  @apply sk-rounded-full sk-flex sk-items-center sk-bg-primary-600 sk-px-6 sk-py-3 sk-font-bold sk-text-white sk-transition-[opacity,top] hover:sk-opacity-80 sk-relative sk-top-0 active:sk-top-0.5;
+}
+
+.sk-body .sk-btn-sm {
+  @apply sk-px-4 sk-py-2 sk-text-sm;
+}
+
+.sk-body .sk-btn-primary {
+  @apply sk-bg-primary-600 dark:sk-border dark:sk-border-primary-600 dark:sk-bg-transparent dark:sk-text-white;
+}
+
+.sk-body .sk-btn-secondary {
+  @apply sk-bg-black/20 sk-p-10 dark:sk-border dark:sk-border-white dark:sk-bg-white/20 dark:sk-text-white;
+}
+
+.sk-body .sk-btn-white {
+  @apply sk-border-2 sk-border-primary-600 sk-bg-white sk-text-primary-600;
+}
+
+.sk-body .sk-btn-white-outline {
+  @apply sk-border-2 sk-border-white sk-text-white;
+}
+
+.sk-body .sk-btn-alert {
+  @apply sk-bg-red-600;
+}

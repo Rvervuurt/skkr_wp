@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-Regular.woff2") format("woff2"),
+    url("../fonts/SourceSans3-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url("../fonts/SourceSans3-Light.woff2") format("woff2"),
+    url("../fonts/SourceSans3-Light.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pangaia";
+  src: url("../fonts/PPPangaia-Bold.woff2") format("woff2"),
+    url("../fonts/PPPangaia-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pangaia";
+  src: url("../fonts/PPPangaia-Medium.woff2") format("woff2"),
+    url("../fonts/PPPangaia-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pangaia";
+  src: url("../fonts/PPPangaia-Ultralight.woff2") format("woff2"),
+    url("../fonts/PPPangaia-Ultralight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/CourierPrime-Bold.woff2") format("woff2"),
+    url("../fonts/CourierPrime-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body.sk-body {
+    @apply sk-font-sans;
+  }
+
+  .sk-body h1,
+  .sk-body h2,
+  .sk-body h3,
+  .sk-body h4,
+  .sk-body h5,
+  .sk-body h6 {
+    @apply sk-font-serif sk-font-medium sk-text-primary-950 dark:sk-text-gray-200 bg-primary-600:!sk-text-white;
+  }
+
+  .sk-body h1 {
+    @apply sk-text-2xl sk-leading-relaxed md:sk-text-3xl lg:sk-text-5xl;
+  }
+
+  .sk-body section a:not(.sk-btn, .sk-about) {
+    @apply sk-cursor-pointer sk-font-bold sk-text-primary-600 sk-underline;
+  }
+}
