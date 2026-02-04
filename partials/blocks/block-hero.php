@@ -48,7 +48,7 @@ $bg_class = $background_style === 'gradient'
         <?php endif; ?>
 
         <?php if ($button_text && $button_link): ?>
-            <div class="mt-8">
+            <div class="sk-mt-8">
                 <a href="<?php echo esc_url($button_link); ?>" class="button button-primary">
                     <?php echo esc_html($button_text); ?>
                 </a>

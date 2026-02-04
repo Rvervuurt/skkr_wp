@@ -25,11 +25,11 @@ $button_link = get_field('text_media_button_link');
 
 // Set order classes based on media position
 if ($media_position == 'left') {
-    $text_order = 'order-2';
-    $media_order = 'order-1';
+    $text_order = 'sk-order-2';
+    $media_order = 'sk-order-1';
 } else {
-    $text_order = 'order-1';
-    $media_order = 'order-2';
+    $text_order = 'sk-order-1';
+    $media_order = 'sk-order-2';
 }
 ?>
 
@@ -48,7 +48,7 @@ if ($media_position == 'left') {
             <?php endif; ?>
 
             <?php if ($button_text && $button_link): ?>
-                <div class="mt-8">
+                <div class="sk-mt-8">
                     <a href="<?php echo esc_url($button_link); ?>" class="button button-primary">
                         <?php echo esc_html($button_text); ?>
                     </a>
@@ -58,8 +58,8 @@ if ($media_position == 'left') {
 
         <div class="text-media-image <?php echo esc_attr($media_order); ?>"
              x-data
-             x-intersect.once="$el.classList.add('opacity-100', 'translate-y-0')"
-             class="opacity-0 translate-y-4 transition-all duration-700">
+             x-intersect.once="$el.classList.add('sk-opacity-100', 'sk-translate-y-0')"
+             class="sk-opacity-0 sk-translate-y-4 sk-transition-all sk-duration-700">
             <?php if ($image): ?>
                 <?php echo wp_get_attachment_image($image, 'large'); ?>
             <?php endif; ?>

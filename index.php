@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main class="site-main">
+<main class="site-main sk-m-4">
 
     <div class="container">
         <?php

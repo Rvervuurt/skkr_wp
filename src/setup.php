@@ -41,6 +41,11 @@ if (!function_exists('skkr_setup')) {
 
         // Add support for wide and full alignment
         add_theme_support('align-wide');
+
+        // Register navigation menus
+        register_nav_menus([
+            'primary' => __('Primary Menu', 'skkr'),
+        ]);
     }
     add_action('after_setup_theme', 'skkr_setup');
 }

@@ -41,6 +41,36 @@ html {
 .sk-container {
     @apply sk-mx-auto sk-max-w-screen-2xl sk-px-6 sk-py-6 md:sk-px-24 md:sk-py-32;
 }
+
+/* Header navigation styling */
+header nav ul li {
+    @apply sk-list-none;
+}
+
+header nav ul li a {
+    @apply sk-no-underline hover:sk-underline sk-transition-all;
+}
+
+header nav ul li:last-child a {
+    @apply sk-btn sk-btn-sm;
+}
+
+/* Add space for fixed header */
+.site-main {
+    @apply sk-pt-24;
+}
+
+/* Adjust header position when WordPress admin bar is visible */
+.admin-bar header {
+    @apply sk-top-[calc(0.5rem+32px)];
+}
+
+@media screen and (min-width: 783px) {
+    .admin-bar header {
+        @apply sk-top-[calc(0.5rem+32px)];
+    }
+}
+
 /* TODO: Fix variant
 .sk-body * {
     @apply bg-primary-600:!sk-text-white bg-primary-600:sk-bg-blue-500;
