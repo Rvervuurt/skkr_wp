@@ -44,3 +44,55 @@ function skkr_body_classes($classes) {
     return $classes;
 }
 add_filter('body_class', 'skkr_body_classes');
+
+if( !function_exists( 'skkr_allowed_block_types' ) ) {
+ 
+	function dinero_allowed_block_types( $allowed_blocks, $editor_context ) {
+
+        $allowed_blocks = array(
+            //CORE
+            // 'core/audio',
+            // 'core/button', // Erstat med ACF buttons
+            // 'core/buttons', // Erstat med ACF buttons
+            // 'core/classic-editor',
+            // 'core/column',
+            // 'core/columns',
+            'core/embed', // Kan ikke altid erstattes med oEmbed
+            // 'core/gallery',
+            // 'core/group',
+            'core/heading',
+            // 'core/html',
+            'core/image',
+            // 'core/list',
+            // 'core/list-item',
+            // 'core/more',
+            // 'core/navigation-link',
+            // 'core/navigation-submenu',
+            'core/paragraph',
+            // 'core/pullquote', // Erstat med blockquote
+            // 'core/quote', // Erstat med blockquote
+            // 'core/search',
+            // 'core/separator',
+            // 'core/shortcode',
+            // 'core/spacer',
+            // 'core/table',
+            'core/video',
+            
+            'acf/hero',
+            'acf/text-media',
+        );
+		
+        // $acf_blocks = acf_get_block_types();
+        // $allowed_blocks = array();
+        // foreach ($acf_blocks as $block) {			
+        //     $allowed_blocks[] = $block['name'];
+        // }
+
+		return $allowed_blocks;
+		
+	
+	}
+
+	add_filter( 'allowed_block_types_all', 'dinero_allowed_block_types', 25, 2 );
+
+}
