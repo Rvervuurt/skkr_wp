@@ -80,6 +80,7 @@ if( !function_exists( 'skkr_allowed_block_types' ) ) {
             
             'acf/hero',
             'acf/text-media',
+            'acf/oneliner',
         );
 		
         // $acf_blocks = acf_get_block_types();

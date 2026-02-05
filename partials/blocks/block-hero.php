@@ -16,44 +16,49 @@ if (!empty($block['anchor'])) {
 }
 
 // Get ACF fields
-$title = get_field('hero_title');
-$subtitle = get_field('hero_subtitle');
-$text = get_field('hero_text');
-$button_text = get_field('hero_button_text');
-$button_link = get_field('hero_button_link');
-$background_style = get_field('hero_background_style') ?: 'gradient'; // gradient or solid
-$background_color = get_field('hero_background_color') ?: 'bg-primary-500';
+$title = get_field('title');
+// $subtitle = get_field('subtitle');
+$text = get_field('introduction');
 
-// Build background classes
-$bg_class = $background_style === 'gradient'
-    ? 'bg-gradient-to-br from-primary-500 to-primary-700'
-    : $background_color;
+$img_id = get_field('media')
+
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="hero-block <?php echo esc_attr($bg_class); ?>">
-    <div class="hero-container">
+<section id="<?php echo esc_attr($id); ?>" class="hero-block sk-container">
+    <div class="hero-container sk-grid sk-items-center sk-gap-10 lg:sk-grid-cols-5 lg:sk-gap-20">
+        <div class="sk-flex sk-flex-col sk-gap-6 lg:sk-col-span-3">
 
-        <?php if ($subtitle): ?>
-            <p class="hero-subtitle"><?php echo esc_html($subtitle); ?></p>
-        <?php endif; ?>
+            <?php if ($title): ?>
+                <h1 class="hero-title"><?php echo esc_html($title); ?></h1>
+            <?php endif; ?>
 
-        <?php if ($title): ?>
-            <h1 class="hero-title"><?php echo esc_html($title); ?></h1>
-        <?php endif; ?>
+            <?php if ($text): ?>
+                <div class="hero-text">
+                    <?php echo wp_kses_post($text); ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($text): ?>
-            <div class="hero-text">
-                <?php echo wp_kses_post($text); ?>
-            </div>
-        <?php endif; ?>
+            <?php if(have_rows('component_buttons')) { ?>
+                <div class="sk-flex sk-flex-nowrap sk-gap-4">
+                    <?php while(have_rows('component_buttons')) {
+                        the_row();
+                        $button_style = get_sub_field('button_style');
 
-        <?php if ($button_text && $button_link): ?>
-            <div class="sk-mt-8">
-                <a href="<?php echo esc_url($button_link); ?>" class="button button-primary">
-                    <?php echo esc_html($button_text); ?>
-                </a>
-            </div>
-        <?php endif; ?>
+                        if($button_style == 'solid') {
+                            $button_classes = 'sk-btn sk-btn-primary';
+                        } elseif($button_style == 'outline') {
+                            $button_classes = 'sk-btn sk-btn-white';
+                        }
+                        $button_link = get_sub_field('button_link');
 
+                ?>
+                    <a href="<?= $button_link['url']; ?>" class="<?= $button_classes; ?>"><?= $button_link['title']; ?></a>
+                <?php } ?>
+            </div>  
+            <?php } ?>
+        </div>
+        <div class="sk-rounded-3xl sk-bg-primary-100 lg:sk-col-span-2">
+            <?php echo wp_get_attachment_image( $img_id, 'medium-large', '', array( 'class' => 'sk-shadow-xl sk-rotate-6' ) ); ?>
+        </div>
     </div>
 </section>

@@ -44,6 +44,22 @@ if (!function_exists('skkr_acf_register_block')) {
                     'anchor' => true,
                 ]
             ]);
+
+            // Register Text/Media block
+            acf_register_block([
+                'name'              => 'oneliner',
+                'title'             => __('Oneliner', 'wp-theme-skkr'),
+                'description'       => __('A oneliner section.', 'wp-theme-skkr'),
+                'render_template'   => 'partials/blocks/block-oneliner.php',
+                'category'          => 'skkr-blocks',
+                'icon'              => 'align-pull-left',
+                'mode'              => 'edit',
+                'keywords'          => ['text'],
+                'supports'          => [
+                    'align' => false,
+                    'anchor' => true,
+                ]
+            ]);
         }
     }
     add_action('acf/init', 'skkr_acf_register_block');

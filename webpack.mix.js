@@ -24,7 +24,9 @@ mix.browserSync({
 });
 
 // JavaScript
-mix.js("src/scripts/main.js", "dist/scripts").extract(); // Extract vendor libraries
+mix.js("src/scripts/main.js", "dist/scripts"); // Standalone bundle
+mix.js("src/scripts/skkr.js", "dist/scripts"); // Standalone bundle
+mix.js("src/scripts/skkr_alpine.js", "dist/scripts"); // Standalone bundle for iframe
 
 // Styles
 mix.postCss("src/styles/main.css", "dist/styles", [
@@ -48,6 +50,9 @@ mix.webpackConfig({
     ignored: /node_modules|dist|\.git|\.DS_Store/,
     aggregateTimeout: 300,
     poll: false,
+  },
+  optimization: {
+    splitChunks: false, // Disable all code splitting - create standalone bundles
   },
 });
 

@@ -6,69 +6,69 @@
 @tailwind utilities;
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 [x-cloak] {
-    @apply sk-hidden;
+  @apply sk-hidden;
 }
 
 .sk-body {
-    @apply sk-bg-primary-50;
+  @apply sk-bg-primary-50 dark:sk-bg-neutral-900;
 }
 
 .sk-body .slide-enter {
-    opacity: 0;
-    transform: translateX(-20px);
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
 .sk-body .slide-enter-active {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sk-body .slide-leave {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sk-body .slide-leave-active {
-    opacity: 0;
-    transform: translateX(20px);
+  opacity: 0;
+  transform: translateX(20px);
 }
 
 /* Homepage styling */
 .sk-container {
-    @apply sk-mx-auto sk-max-w-screen-2xl sk-px-6 sk-py-6 md:sk-px-24 md:sk-py-32;
+  @apply sk-mx-auto sk-max-w-screen-2xl sk-px-6 sk-py-6 md:sk-px-24 md:sk-py-32;
 }
 
 /* Header navigation styling */
 header nav ul li {
-    @apply sk-list-none;
+  @apply sk-list-none;
 }
 
 header nav ul li a {
-    @apply sk-no-underline hover:sk-underline sk-transition-all;
+  @apply sk-no-underline sk-transition-all hover:sk-underline;
 }
 
 header nav ul li:last-child a {
-    @apply sk-btn sk-btn-sm;
+  @apply sk-btn sk-btn-sm;
 }
 
 /* Add space for fixed header */
 .site-main {
-    @apply sk-pt-24;
+  @apply sk-m-4 sk-bg-primary-50 sk-pt-24 sk-text-neutral-900 dark:sk-bg-neutral-900 dark:sk-text-neutral-100;
 }
 
 /* Adjust header position when WordPress admin bar is visible */
 .admin-bar header {
-    @apply sk-top-[calc(0.5rem+32px)];
+  @apply sk-top-[calc(0.5rem+32px)];
 }
 
 @media screen and (min-width: 783px) {
-    .admin-bar header {
-        @apply sk-top-[calc(0.5rem+32px)];
-    }
+  .admin-bar header {
+    @apply sk-top-[calc(0.5rem+32px)];
+  }
 }
 
 /* TODO: Fix variant
