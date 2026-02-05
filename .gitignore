@@ -21,3 +21,4 @@ Thumbs.db
 wp-config.php
 wp-content/uploads/
 *.log
+track/script-usage.json
