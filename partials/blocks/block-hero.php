@@ -25,7 +25,7 @@ $img_id = get_field('media')
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="hero-block sk-container">
-    <div class="hero-container sk-grid sk-items-center sk-gap-10 lg:sk-grid-cols-5 lg:sk-gap-20">
+    <div class="hero-container sk-grid sk-items-center sk-gap-20 lg:sk-grid-cols-5">
         <div class="sk-flex sk-flex-col sk-gap-6 lg:sk-col-span-3">
 
             <?php if ($title): ?>
@@ -57,7 +57,7 @@ $img_id = get_field('media')
             </div>  
             <?php } ?>
         </div>
-        <div class="sk-rounded-3xl sk-bg-primary-100 lg:sk-col-span-2">
+        <div class="sk-mx-auto sk-rounded-3xl sk-bg-primary-100 max-lg:sk-max-w-[75%] max-md:sk-max-w-full lg:sk-col-span-2">
             <?php echo wp_get_attachment_image( $img_id, 'medium-large', '', array( 'class' => 'sk-shadow-xl sk-rotate-6' ) ); ?>
         </div>
     </div>

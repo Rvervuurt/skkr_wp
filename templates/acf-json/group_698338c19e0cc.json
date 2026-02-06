@@ -53,8 +53,8 @@
                 "id": ""
             },
             "choices": {
-                "ltr": "Text \/ Media",
-                "rtl": "Media \/ Text"
+                "ltr": "Normal",
+                "rtl": "Reverse"
             },
             "default_value": "",
             "return_format": "value",
@@ -150,7 +150,7 @@
             "allow_in_bindings": 0,
             "rows": "",
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "wpautop"
         },
         {
             "key": "field_698339b2e655e",
@@ -298,5 +298,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770294775
+    "modified": 1770372347
 }

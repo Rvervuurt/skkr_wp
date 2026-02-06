@@ -10,11 +10,11 @@
 
 <footer class="sk-bg-neutral-900 sk-text-neutral-300">
     <div class="container-inner sk-py-12 lg:sk-py-16">
-        <div class="sk-grid sk-gap-8 md:sk-grid-cols-2 lg:sk-grid-cols-4">
+        <div class="sk-mx-4 sk-grid sk-gap-8 md:sk-grid-cols-2 lg:sk-grid-cols-4">
 
             <!-- Footer Column 1 -->
             <div>
-                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold sk-text-white">
+                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold !sk-text-white">
                     <?php bloginfo('name'); ?>
                 </h3>
                 <p class="sk-text-sm sk-text-neutral-400">
@@ -24,34 +24,59 @@
 
             <!-- Footer Column 2 -->
             <div>
-                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold sk-text-white">Quick Links</h3>
-                <ul class="sk-space-y-2 sk-text-sm">
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Home</a></li>
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">About</a></li>
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Services</a></li>
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Contact</a></li>
-                </ul>
+                <?php
+                if (has_nav_menu('footer-2')) {
+                    $menu_name = wp_get_nav_menu_name('footer-2');
+                    if ($menu_name) {
+                        echo '<h3 class="sk-mb-4 sk-text-lg sk-font-semibold !sk-text-white">' . esc_html($menu_name) . '</h3>';
+                    }
+                    wp_nav_menu([
+                        'theme_location' => 'footer-2',
+                        'container' => false,
+                        'menu_class' => 'sk-space-y-2 sk-text-sm',
+                        'fallback_cb' => false,
+                        'depth' => 1,
+                        'walker' => new SKKR_Footer_Menu_Walker(),
+                    ]);
+                }
+                ?>
             </div>
 
             <!-- Footer Column 3 -->
             <div>
-                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold sk-text-white">Resources</h3>
-                <ul class="sk-space-y-2 sk-text-sm">
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Blog</a></li>
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Documentation</a></li>
-                    <li><a href="#" class="hover:sk-text-white sk-transition-colors">Support</a></li>
-                </ul>
+                <?php
+                if (has_nav_menu('footer-3')) {
+                    $menu_name = wp_get_nav_menu_name('footer-3');
+                    if ($menu_name) {
+                        echo '<h3 class="sk-mb-4 sk-text-lg sk-font-semibold !sk-text-white">' . esc_html($menu_name) . '</h3>';
+                    }
+                    wp_nav_menu([
+                        'theme_location' => 'footer-3',
+                        'container' => false,
+                        'menu_class' => 'sk-space-y-2 sk-text-sm',
+                        'fallback_cb' => false,
+                        'depth' => 1,
+                        'walker' => new SKKR_Footer_Menu_Walker(),
+                    ]);
+                }
+                ?>
             </div>
 
             <!-- Footer Column 4 -->
             <div>
-                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold sk-text-white">Follow Us</h3>
+                <h3 class="sk-mb-4 sk-text-lg sk-font-semibold !sk-text-white">Follow Us</h3>
                 <div class="sk-flex sk-space-x-4">
                     <!-- Add your social media links here -->
-                    <a href="#" class="sk-text-neutral-400 hover:sk-text-white sk-transition-colors">
-                        <span class="sk-sr-only">Facebook</span>
-                        <svg class="sk-h-6 sk-w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    <a href="https://www.linkedin.com/company/skkr/" class="!sk-text-white" target="_blank">
+                        <svg xmlns="https://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <g clip-path="url(#a_f3p6y8k2)">
+                            <path fill="currentColor" fill-rule="evenodd" d="M15.964 0h.072C24.853 0 32 7.147 32 15.964v.072C32 24.853 24.853 32 16.036 32h-.072C7.147 32 0 24.853 0 16.036v-.072C0 7.147 7.147 0 15.964 0ZM11 12a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-.75 1.5a.5.5 0 0 0-.5.5v7.5a.5.5 0 0 0 .5.5h1.5a.5.5 0 0 0 .5-.5V14a.5.5 0 0 0-.5-.5h-1.5Zm4 0a.5.5 0 0 0-.5.5v7.5a.5.5 0 0 0 .5.5h1.5a.5.5 0 0 0 .5-.5V18a2 2 0 0 1 4 0v3.5a.5.5 0 0 0 .5.5h1.5a.5.5 0 0 0 .5-.5v-4a4 4 0 0 0-6.5-3.123V14a.5.5 0 0 0-.5-.5h-1.5Z" clip-rule="evenodd"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="a_f3p6y8k2">
+                            <path fill="#fff" d="M0 0h32v32H0z"></path>
+                            </clipPath>
+                        </defs>
                         </svg>
                     </a>
                 </div>

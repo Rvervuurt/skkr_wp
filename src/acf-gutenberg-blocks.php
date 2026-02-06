@@ -45,7 +45,7 @@ if (!function_exists('skkr_acf_register_block')) {
                 ]
             ]);
 
-            // Register Text/Media block
+            // Register Oneliner block
             acf_register_block([
                 'name'              => 'oneliner',
                 'title'             => __('Oneliner', 'wp-theme-skkr'),
@@ -55,6 +55,22 @@ if (!function_exists('skkr_acf_register_block')) {
                 'icon'              => 'align-pull-left',
                 'mode'              => 'edit',
                 'keywords'          => ['text'],
+                'supports'          => [
+                    'align' => false,
+                    'anchor' => true,
+                ]
+            ]);
+
+            // Register Text block
+            acf_register_block([
+                'name'              => 'text',
+                'title'             => __('Text', 'wp-theme-skkr'),
+                'description'       => __('A simple text block with title and content.', 'wp-theme-skkr'),
+                'render_template'   => 'partials/blocks/block-text.php',
+                'category'          => 'skkr-blocks',
+                'icon'              => 'text',
+                'mode'              => 'edit',
+                'keywords'          => ['text', 'content', 'paragraph'],
                 'supports'          => [
                     'align' => false,
                     'anchor' => true,

@@ -45,6 +45,8 @@ if (!function_exists('skkr_setup')) {
         // Register navigation menus
         register_nav_menus([
             'primary' => __('Primary Menu', 'skkr'),
+            'footer-2' => __('Footer Menu 2', 'skkr'),
+            'footer-3' => __('Footer Menu 3', 'skkr'),
         ]);
     }
     add_action('after_setup_theme', 'skkr_setup');

@@ -30,6 +30,7 @@ $skkr_includes = [
     'src/setup.php',
     'src/acf-gutenberg-blocks.php',
     'src/enqueue-scripts.php',
+    'src/footer-menu-walker.php',
 ];
 
 array_walk($skkr_includes, function ($file) {
@@ -63,8 +64,8 @@ if( !function_exists( 'skkr_allowed_block_types' ) ) {
             'core/heading',
             // 'core/html',
             'core/image',
-            // 'core/list',
-            // 'core/list-item',
+            'core/list',
+            'core/list-item',
             // 'core/more',
             // 'core/navigation-link',
             // 'core/navigation-submenu',
@@ -81,6 +82,7 @@ if( !function_exists( 'skkr_allowed_block_types' ) ) {
             'acf/hero',
             'acf/text-media',
             'acf/oneliner',
+            'acf/text',
         );
 		
         // $acf_blocks = acf_get_block_types();

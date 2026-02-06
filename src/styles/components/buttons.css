@@ -6,6 +6,10 @@
   @apply sk-px-4 sk-py-2 sk-text-sm;
 }
 
+.sk-body .sk-btn-xs {
+  @apply sk-px-2 sk-py-1 sk-text-xs;
+}
+
 .sk-body .sk-btn-primary {
   @apply sk-bg-primary-600 dark:sk-border dark:sk-border-primary-600 dark:sk-bg-primary-600 dark:sk-text-white;
 }

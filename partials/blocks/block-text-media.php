@@ -30,13 +30,12 @@ if($order == 'rtl') {
 
 
 $img_id = get_field('media');
-$wysiwyg_text = get_field('text')
 
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="hero-block sk-container">
-    <div class="hero-container sk-flex sk-items-center sk-gap-10 lg:sk-gap-20 <?php if($order == 'rtl') { ?> sk-flex-row-reverse <?php } ?> ">
-        <div class="sk-flex sk-flex-col sk-gap-6 lg:sk-w-1/2">
+    <div class="hero-container sk-grid sk-items-center sk-gap-20 lg:sk-grid-cols-2">
+        <div class="sk-flex sk-flex-col sk-gap-6 <?php if($order == 'rtl') { ?> sk-order-2 <?php } ?> ">
 
             <?php if ($title): ?>
                 <h1 class="hero-title"><?php echo esc_html($title); ?></h1>
@@ -67,21 +66,60 @@ $wysiwyg_text = get_field('text')
             </div>  
             <?php } ?>
         </div>
-        <div class="sk-rounded-3xl sk-bg-primary-100 lg:sk-w-1/2 dark:!sk-text-neutral-950">
-            <?php if ($type === 'image'): ?>
-                <?php echo wp_get_attachment_image( $img_id, 'medium-large', '', array( 'class' => 'sk-shadow-xl sk-rounded-3xl overflow-hidden ' . $rotation ) ); ?>
-            <?php elseif ($type === 'text'): ?>
-                <div class="sk-p-8">
+        <div class="sk-rounded-3xl sk-bg-primary-100 dark:!sk-text-neutral-950 <?php if($order == 'rtl') { ?> sk-order-1 <?php } ?> <?php if($type == 'image') { ?> sk-mx-auto max-lg:sk-max-w-[75%] max-md:sk-max-w-full <?php } ?>">
+        <?php if ($type === 'image'): ?>
+            <?php echo wp_get_attachment_image( $img_id, 'medium-large', '', array( 'class' => 'sk-shadow-xl sk-rounded-3xl overflow-hidden ' . $rotation ) ); ?>
+            <?php elseif ($type === 'code'): ?>
+                <div class="sk-flex sk-flex-col sk-gap-4 sk-p-8">
                     <h2 class="dark:!sk-text-neutral-950">Sådan gør du:</h2>
-                    <p>1. Tilføj følgende script til din &lt;head&gt;</p>
-                    <pre>&lt;script type="text/javascript" src="https://skkr.dk/dist/scripts/main.min.js"&gt;&lt;/script&gt;</pre>
-                    <p>2. Tilføj denne div til stedet hvor du vil integrere vores ikon</p>
-                    <pre>&lt;button id="skkr-icon"&gt;&lt;/button&gt;</pre>
-                    <p><small>Skkr-logoet er 32px*32px og vil tage være samme farven som teksten.</small></p>
-                                    </div>
+                    <div>
+                        <p>1. Tilføj følgende script til din &lt;head&gt;</p>
+                        <div class="sk-flex sk-w-full sk-flex-nowrap sk-items-center sk-gap-4">
+                            <pre id="copy-script-tag">&lt;script type="text/javascript" src="https://skkr.dk/dist/scripts/main.min.js"&gt;&lt;/script&gt;</pre>
+                            <div class="sk-group sk-relative">
+                                <p class="sk-absolute -sk-top-7 sk-left-1/2 -sk-translate-x-1/2 sk-whitespace-nowrap sk-rounded sk-bg-neutral-900 sk-px-1 sk-py-0.5 sk-text-xs sk-text-white sk-opacity-0 sk-transition-opacity group-hover:sk-opacity-100">
+                                    Klik for at kopiere
+                                </p>
+                                <button class="sk-btn sk-btn-primary sk-btn-sm" data-copy-target="#copy-script-tag">
+                                    <svg class="sk-h-4 sk-w-4 sk-flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>2. Tilføj denne div til stedet hvor du vil integrere vores ikon</p>
+                        <div class="sk-flex sk-w-full sk-items-center sk-gap-4 lg:sk-flex-nowrap">
+                            <pre id="copy-button-tag">&lt;button id="skkr-icon"&gt;&lt;/button&gt;</pre>
+                            <div class="sk-group sk-relative">
+                                <p class="sk-absolute -sk-top-7 sk-left-1/2 -sk-translate-x-1/2 sk-whitespace-nowrap sk-rounded sk-bg-neutral-900 sk-px-1 sk-py-0.5 sk-text-xs sk-text-white sk-opacity-0 sk-transition-opacity group-hover:sk-opacity-100">
+                                    Klik for at kopiere
+                                </p>
+                                <button class="sk-btn sk-btn-primary sk-btn-sm" data-copy-target="#copy-button-tag">
+                                    <svg class="sk-h-4 sk-w-4 sk-flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <p><small>Skkr-logoet er 32px*32px og vil tage være samme farven som teksten.</small></p>
+                    </div>
+                </div>
             <?php elseif ($type === 'example'): ?>
-                <div class="sk-p-20">
-                    <div class="sk-flex sk-h-full sk-w-full sk-items-center sk-justify-center sk-gap-2 sk-text-primary-600">
+            <div class="sk-relative sk-left-4 sk-top-2 sk-flex sk-flex-wrap sk-items-center sk-justify-start sk-gap-2">
+                <p class="sk-text-bold sk-text-sm">Ændr farve:</p>
+                <button class="sk-group sk-relative sk-h-6 sk-w-6 sk-rounded-full sk-border-2 sk-border-neutral-200 sk-bg-primary-600 sk-transition-transform hover:sk-scale-110" data-color-change="sk-text-primary-600" aria-label="Primary color">
+                </button>
+                <button class="sk-group sk-relative sk-h-6 sk-w-6 sk-rounded-full sk-border-2 sk-border-neutral-200 sk-bg-neutral-900 sk-transition-transform hover:sk-scale-110" data-color-change="sk-text-neutral-900" aria-label="Black color">
+                </button>
+                <button class="sk-group sk-relative sk-h-6 sk-w-6 sk-rounded-full sk-border-2 sk-border-neutral-200 sk-bg-red-600 sk-transition-transform hover:sk-scale-110" data-color-change="sk-text-red-600" aria-label="Red color">
+                </button>
+                <button class="sk-group sk-relative sk-h-6 sk-w-6 sk-rounded-full sk-border-2 sk-border-neutral-200 sk-bg-green-600 sk-transition-transform hover:sk-scale-110" data-color-change="sk-text-green-600" aria-label="Green color">
+                </button>
+            </div>
+                <div class="sk-flex sk-flex-col sk-gap-6 sk-p-8">
+                    <div id="icon-container" class="sk-flex sk-h-full sk-w-full sk-items-center sk-justify-center sk-gap-2 sk-text-primary-600 sk-transition-colors">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="32"
@@ -147,6 +185,7 @@ $wysiwyg_text = get_field('text')
                         </svg>
                         <button id="skkr-icon"></button>
                     </div>
+                    
                 </div>
             <?php endif; ?>
         </div>

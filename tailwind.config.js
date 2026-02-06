@@ -42,6 +42,7 @@ module.exports = {
       // but NOT to selectors in variant definitions
       addVariant("bg-primary-600", `:is(.sk-bg-primary-600) &`);
       addVariant("bg-primary-100", `:is(.sk-bg-primary-100) &`);
+      addVariant("bg-neutral-900", `:is(.sk-bg-neutral-900) &`);
     }),
   ],
   prefix: "sk-",

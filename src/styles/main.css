@@ -9,12 +9,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Smooth transitions for dark/light mode */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply sk-transition-colors sk-duration-200;
+  }
+}
+
+body.sk-body:not(.modal) {
+  @apply sk-bg-primary-50 dark:sk-bg-neutral-900;
+}
+
 [x-cloak] {
   @apply sk-hidden;
 }
 
-.sk-body {
-  @apply sk-bg-primary-50 dark:sk-bg-neutral-900;
+body.sk-body {
+  @apply sk-bg-transparent;
 }
 
 .sk-body .slide-enter {
@@ -39,7 +52,7 @@ html {
 
 /* Homepage styling */
 .sk-container {
-  @apply sk-mx-auto sk-max-w-screen-2xl sk-px-6 sk-py-6 md:sk-px-24 md:sk-py-32;
+  @apply sk-mx-auto sk-max-w-screen-2xl sk-px-6 sk-py-12 md:sk-px-12 md:sk-py-16 lg:sk-px-24 lg:sk-py-32;
 }
 
 /* Header navigation styling */
