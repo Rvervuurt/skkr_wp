@@ -11,9 +11,19 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+    <script>
+        // Prevent flash of light mode - must run before page renders
+        (function() {
+            const darkMode = localStorage.getItem('darkMode') === 'true' ||
+                           (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (darkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
     <script
       type="text/javascript"
-      src="/wp-content/themes/skkr_wp/dist/scripts/skkr.js"
+      src="<?= get_template_directory_uri(); ?>/dist/scripts/skkr.js"
     ></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,19 +31,19 @@
 </head>
 
 <body <?php body_class(); ?> x-data="{ mobileMenuOpen: false, float: false, darkMode: false }" x-init="
-    darkMode = localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // Read current dark mode state from the html element (already set by inline script)
+    darkMode = document.documentElement.classList.contains('dark');
     $watch('darkMode', val => {
         localStorage.setItem('darkMode', val);
         document.documentElement.classList.toggle('dark', val);
     });
-    document.documentElement.classList.toggle('dark', darkMode);
 ">
 
     <?php wp_body_open(); ?>
 
     <header
         :class="float ? '': ''"
-        class="sk-fixed sk-top-2 sk-z-50 sk-mx-2 sk-flex sk-w-[calc(100%-1rem)] sk-items-center sk-justify-between sk-rounded-full sk-border sk-border-primary-200 sk-bg-white sk-px-6 sk-py-4 dark:sk-border-primary-800 dark:sk-bg-neutral-900">
+        class="sk-fixed sk-top-2 sk-z-50 sk-mx-2 sk-flex sk-w-[calc(100%-1rem)] sk-items-center sk-justify-between sk-rounded-full sk-border sk-border-primary-200 sk-bg-white sk-px-6 sk-py-4 dark:sk-border-dark-border dark:sk-bg-dark-elevated">
 
         <!-- Logo -->
         <div class="sk-flex sk-items-center sk-gap-2 sk-text-primary-600 dark:sk-text-primary-400">
@@ -55,7 +65,7 @@
 
         <!-- Desktop Navigation -->
         <div class="sk-hidden md:sk-block">
-            <ul class="sk-flex sk-items-center sk-gap-6">
+            <ul class="sk-flex sk-items-center sk-gap-6 dark:sk-text-white">
                 <?php
                 // You can replace these with WordPress menu
                 wp_nav_menu(array(
@@ -113,7 +123,7 @@
         <!-- Mobile Navigation -->
         <div x-show="mobileMenuOpen"
              x-collapse
-             class="sk-absolute sk-left-0 sk-right-0 sk-top-full sk-mt-2 sk-rounded-3xl sk-border sk-border-primary-200 sk-bg-white sk-p-4 md:sk-hidden dark:sk-border-primary-800 dark:sk-bg-neutral-900">
+             class="sk-absolute sk-left-0 sk-right-0 sk-top-full sk-mt-2 sk-rounded-3xl sk-border sk-border-primary-200 sk-bg-white sk-p-4 md:sk-hidden dark:sk-border-dark-border dark:sk-bg-dark-elevated">
             <ul class="sk-space-y-2">
                 <?php
                 wp_nav_menu(array(

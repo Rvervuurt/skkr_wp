@@ -26,8 +26,8 @@ $show_edit_date = get_field('show_edit_date');
     <div class="sk-mx-auto sk-max-w-4xl">
 
         <?php if ($show_edit_date): ?>
-            <p class="sk-mb-4 sk-text-sm sk-text-neutral-600 dark:sk-text-neutral-400">
-                <?php echo __('Last updated:', 'wp-theme-skkr'); ?>
+            <p class="sk-mb-4 sk-text-sm sk-text-neutral-600 dark:sk-text-dark-text-muted">
+                <?php echo __('Last updated:', 'skkr'); ?>
                 <time datetime="<?php echo esc_attr(get_the_modified_date('c')); ?>">
                     <?php echo get_the_modified_date(); ?>
                 </time>
@@ -39,7 +39,7 @@ $show_edit_date = get_field('show_edit_date');
         <?php endif; ?>
 
         <?php if ($text): ?>
-            <div class="sk-prose sk-prose-lg dark:sk-prose-invert sk-max-w-none">
+            <div class="sk-prose sk-prose-lg sk-max-w-none dark:sk-prose-invert">
                 <?php echo wp_kses_post($text); ?>
             </div>
         <?php endif; ?>

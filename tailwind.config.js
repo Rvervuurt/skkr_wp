@@ -29,6 +29,13 @@ module.exports = {
         "primary-800": "#9c2810",
         "primary-900": "#7e2410",
         "primary-950": "#440e06",
+        // Warm dark mode colors
+        "dark-bg": "#1a0f0a",
+        "dark-surface": "#251812",
+        "dark-elevated": "#2d1f17",
+        "dark-border": "#3d2b20",
+        "dark-text": "#e8d5c4",
+        "dark-text-muted": "#b8a99a",
       },
     },
   },

@@ -69,7 +69,7 @@
   .sk-body h4,
   .sk-body h5,
   .sk-body h6 {
-    @apply sk-font-serif  sk-font-medium sk-text-primary-950 dark:sk-text-neutral-200 bg-primary-600:!sk-text-white;
+    @apply sk-font-serif  sk-font-medium sk-text-primary-950 dark:sk-text-dark-text bg-primary-600:!sk-text-white;
   }
 
   .sk-body h1 {
@@ -101,6 +101,6 @@
   }
 
   pre {
-    @apply sk-overflow-x-auto sk-overflow-y-hidden sk-rounded sk-bg-neutral-900 sk-px-2 sk-py-2 sk-leading-4 sk-text-gray-200 max-lg:sk-whitespace-normal;
+    @apply sk-overflow-x-auto sk-overflow-y-hidden sk-rounded sk-bg-neutral-900 sk-px-2 sk-py-2 sk-leading-4 sk-text-gray-200 max-lg:sk-whitespace-normal dark:sk-bg-dark-elevated dark:sk-text-dark-text;
   }
 }

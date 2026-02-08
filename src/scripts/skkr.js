@@ -12,19 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Track usage
   const trackingPixel = new Image();
   trackingPixel.src =
-    "/wp-content/themes/skkr_wp/track/track-script.php?rand=" + Math.random();
+    "https://skkr.dk/wp-content/themes/skkr_wp/track/track-script.php?rand=" +
+    Math.random();
 
   async function createModal() {
     // Create modal elements
     // Track modal activation
     const activationPixel = new Image();
     activationPixel.src =
-      "/wp-content/themes/skkr_wp/track/track-script.php?type=active&rand=" +
+      "https://skkr.dk/wp-content/themes/skkr_wp/track/track-script.php?type=active&rand=" +
       Math.random();
 
     const skkrStyle = document.createElement("link");
     skkrStyle.rel = "stylesheet";
-    skkrStyle.href = "/wp-content/themes/skkr_wp/dist/styles/main.css";
+    skkrStyle.href =
+      "https://skkr.dk/wp-content/themes/skkr_wp/dist/styles/main.css";
     document.head.appendChild(skkrStyle);
 
     // Modal
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "modal sk-fixed sk-left-0 sk-top-0 sk-z-[9999] sk-flex sk-h-screen sk-w-screen sk-items-start sk-justify-center sk-overflow-hidden sk-bg-black/80";
 
     const modalContent = document.createElement("iframe");
-    modalContent.src = "/wp-content/themes/skkr_wp/skkr.html";
+    modalContent.src = "https://skkr.dk/wp-content/themes/skkr_wp/skkr.html";
     modalContent.className =
       "modal-content sk-relative sk-top-10 sk-h-full sk-max-h-[520px] sk-w-full sk-max-w-xl";
 

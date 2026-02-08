@@ -21,7 +21,7 @@ add_action('after_switch_theme', function () {
 
 // Load text domain
 function skkr_load_theme_textdomain() {
-    load_theme_textdomain('wp-theme-skkr', get_template_directory() . '/languages');
+    load_theme_textdomain('skkr', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'skkr_load_theme_textdomain');
 
@@ -35,7 +35,8 @@ $skkr_includes = [
 
 array_walk($skkr_includes, function ($file) {
     if (!locate_template($file, true, true)) {
-        trigger_error(sprintf(__('Error locating %s for inclusion', 'wp-theme-skkr'), $file), E_USER_ERROR);
+        /* translators: %s: file path */
+        trigger_error(sprintf(__('Error locating %s for inclusion', 'skkr'), $file), E_USER_ERROR);
     }
 });
 

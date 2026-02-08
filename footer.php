@@ -8,7 +8,7 @@
  */
 ?>
 
-<footer class="sk-bg-neutral-900 sk-text-neutral-300">
+<footer class="sk-bg-neutral-900 sk-text-neutral-300 dark:sk-bg-dark-surface dark:sk-text-dark-text">
     <div class="container-inner sk-py-12 lg:sk-py-16">
         <div class="sk-mx-4 sk-grid sk-gap-8 md:sk-grid-cols-2 lg:sk-grid-cols-4">
 

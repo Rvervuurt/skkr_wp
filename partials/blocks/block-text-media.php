@@ -73,9 +73,9 @@ $img_id = get_field('media');
                 <div class="sk-flex sk-flex-col sk-gap-4 sk-p-8">
                     <h2 class="dark:!sk-text-neutral-950">Sådan gør du:</h2>
                     <div>
-                        <p>1. Tilføj følgende script til din &lt;head&gt;</p>
+                        <p>1. Tilføj følgende script lige før din &lt;/body&gt;-tag</p>
                         <div class="sk-flex sk-w-full sk-flex-nowrap sk-items-center sk-gap-4">
-                            <pre id="copy-script-tag">&lt;script type="text/javascript" src="https://skkr.dk/dist/scripts/main.min.js"&gt;&lt;/script&gt;</pre>
+                            <pre id="copy-script-tag">&lt;script type="text/javascript" src="https://skkr.dk/dist/scripts/skkr.js" async&gt;&lt;/script&gt;</pre>
                             <div class="sk-group sk-relative">
                                 <p class="sk-absolute -sk-top-7 sk-left-1/2 -sk-translate-x-1/2 sk-whitespace-nowrap sk-rounded sk-bg-neutral-900 sk-px-1 sk-py-0.5 sk-text-xs sk-text-white sk-opacity-0 sk-transition-opacity group-hover:sk-opacity-100">
                                     Klik for at kopiere

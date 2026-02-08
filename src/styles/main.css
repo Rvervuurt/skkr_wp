@@ -16,10 +16,32 @@ html {
   *::after {
     @apply sk-transition-colors sk-duration-200;
   }
+
+  /* Dark mode improvements */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Adjust prose styles for warm dark mode */
+  .dark .sk-prose {
+    @apply sk-text-dark-text;
+  }
+
+  .dark .sk-prose-invert {
+    --tw-prose-body: theme("colors.dark-text");
+    --tw-prose-headings: theme("colors.dark-text");
+    --tw-prose-links: theme("colors.primary-500");
+    --tw-prose-bold: theme("colors.dark-text");
+    --tw-prose-counters: theme("colors.dark-text-muted");
+    --tw-prose-bullets: theme("colors.dark-text-muted");
+    --tw-prose-quotes: theme("colors.dark-text");
+    --tw-prose-code: theme("colors.dark-text");
+    --tw-prose-pre-bg: theme("colors.dark-elevated");
+  }
 }
 
 body.sk-body:not(.modal) {
-  @apply sk-bg-primary-50 dark:sk-bg-neutral-900;
+  @apply sk-bg-primary-50 dark:sk-bg-dark-bg;
 }
 
 [x-cloak] {
@@ -70,7 +92,7 @@ header nav ul li:last-child a {
 
 /* Add space for fixed header */
 .site-main {
-  @apply sk-m-4 sk-bg-primary-50 sk-pt-24 sk-text-neutral-900 dark:sk-bg-neutral-900 dark:sk-text-neutral-100;
+  @apply sk-m-4 sk-bg-primary-50 sk-pt-24 sk-text-neutral-900 dark:sk-bg-dark-bg dark:sk-text-dark-text;
 }
 
 /* Adjust header position when WordPress admin bar is visible */

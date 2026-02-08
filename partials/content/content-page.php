@@ -9,7 +9,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
     <div class="entry-content sk-flex sk-flex-col sk-gap-8 lg:sk-gap-12">
         <?php the_content(); ?>
     </div>
