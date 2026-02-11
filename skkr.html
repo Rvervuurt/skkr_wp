@@ -9,7 +9,7 @@
     </head>
     <body class="sk-body modal">
         <div
-            class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 sk-shadow-2xl dark:sk-bg-gray-800"
+            class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 sk-shadow-2xl dark:sk-bg-gray-900 dark:sk-shadow-2xl dark:sk-shadow-black/50"
             x-data="{
                 currentPage: 1,
                 history: [],
@@ -27,13 +27,13 @@
             }"
         >
             <header
-                class="sk-relative sk-flex sk-w-full sk-items-center sk-justify-center sk-border-b sk-border-primary-200 sk-px-6 sk-py-4 dark:sk-border-gray-700"
+                class="sk-relative sk-flex sk-w-full sk-items-center sk-justify-center sk-border-b sk-border-primary-200 sk-px-6 sk-py-4 dark:sk-border-gray-700 dark:sk-bg-gray-800/80"
             >
                 <button
                     x-show="history.length > 0"
                     x-transition
                     @click="goBack()"
-                    class="sk-absolute sk-left-4 sk-flex sk-items-center sk-gap-2 sk-rounded-md sk-px-3 sk-py-2 sk-text-primary-600 sk-transition-colors hover:sk-bg-primary-100 dark:hover:sk-bg-gray-700"
+                    class="sk-absolute sk-left-4 sk-flex sk-items-center sk-gap-2 sk-rounded-md sk-px-3 sk-py-2 sk-text-primary-600 sk-transition-colors hover:sk-bg-primary-100 dark:sk-text-primary-400 dark:hover:sk-bg-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
                 </button>
                 <a
                     href="https://skkr.dk"
-                    class="sk- sk-flex sk-items-center sk-gap-2 sk-text-primary-600"
+                    class="sk- sk-flex sk-items-center sk-gap-2 sk-text-primary-600 dark:sk-text-primary-400"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +102,12 @@
             </svg>
           </div> -->
                     <h1
-                        class="sk-flex sk-w-full sk-flex-nowrap sk-justify-center sk-gap-2.5 sk-font-serif !sk-text-3xl sk-font-bold"
+                        class="sk-flex sk-w-full sk-flex-nowrap sk-justify-center sk-gap-2.5 sk-font-serif !sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <p>Vi er her for at</p>
-                        <p class="sk-text-primary-600">Skkr</p>
+                        <p class="sk-text-primary-600 dark:sk-text-primary-400">
+                            Skkr
+                        </p>
                         <!-- <svg xmlns="https://www.w3.org/2000/svg" class="sk-text-primary-600" width="79" height="30" fill="none"><path fill="currentColor" d="M1.274 15.201C.452 13.688.04 12.22.04 10.794v-.793c1.19-4.113 3.247-6.17 6.17-6.17h1.586c1.352.162 2.028.602 2.028 1.322v1.058c-.06.264-1.234.94-3.526 2.027-.881 1.058-1.322 1.969-1.322 2.732 0 1.602 1.587 3.364 4.76 5.289 2.174 2.482 3.26 4.48 3.26 5.993 0 2.982-2.35 5.391-7.05 7.228H3.83c-1.939-.206-2.908-.94-2.908-2.204 0-.132-.03-.25-.089-.352 0-1.25 1.058-2.013 3.173-2.292 1.514 0 2.512-.411 2.997-1.234.47-.47.705-1.028.705-1.675 0-.69-1.616-2.276-4.847-4.76-.617-.22-1.146-.807-1.587-1.762ZM21.26 13.66l10.554-5.134c1.175.337 1.763.675 1.763 1.013v1.036c0 .485-1.902 1.968-5.707 4.45v.353c3.849 4.907 6.045 8.454 6.588 10.643v.33c0 .338-.44.684-1.322 1.036h-1.322c-.866 0-3.21-3.547-7.029-10.642h-.881c-2.057.954-3.085 1.645-3.085 2.07 0 .353.037 1.066.11 2.138.074 1.072.184 2.527.33 4.363-.205 1.836-1.373 2.754-3.503 2.754-1.175-.778-1.763-2.835-1.763-6.17.294-5.405.514-9.79.661-13.154.147-3.379.22-5.744.22-7.095l1.323-.683h.44c1.176 0 1.903 2.056 2.182 6.17v6.522h.44Zm22.96 0 10.555-5.134c1.175.337 1.762.675 1.762 1.013v1.036c0 .485-1.902 1.968-5.707 4.45v.353c3.849 4.907 6.045 8.454 6.589 10.643v.33c0 .338-.441.684-1.322 1.036h-1.322c-.867 0-3.21-3.547-7.03-10.642h-.881c-2.057.954-3.085 1.645-3.085 2.07 0 .353.037 1.066.11 2.138.074 1.072.184 2.527.33 4.363-.205 1.836-1.373 2.754-3.503 2.754-1.175-.778-1.763-2.835-1.763-6.17.294-5.405.515-9.79.662-13.154.146-3.379.22-5.744.22-7.095l1.322-.683h.44c1.176 0 1.903 2.056 2.182 6.17v6.522h.44Zm23.07 16.107c-1.528 0-3.063-6.265-4.605-18.795.411-1.117.83-1.675 1.256-1.675h.837c1.278 0 2.255 2.644 2.93 7.932h.42c1.704-4.172 4.487-6.258 8.35-6.258 1.117.412 1.675.823 1.675 1.234v1.675c0 .676-1.535 1.513-4.605 2.512-1.675 1.85-2.93 6.03-3.768 12.538l-1.234.837H67.29Z"/></svg> -->
                         <p class="-sk-ml-2.5">e dig.</p>
                     </h1>
@@ -130,7 +132,7 @@
                 </div> -->
                 <div class="sk-flex sk-flex-col sk-gap-4 sk-px-6">
                     <button
-                        class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-6 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-600 dark:sk-to-primary-800"
+                        class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-6 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(2)"
                     >
                         <div
@@ -234,7 +236,7 @@
                         </p>
                     </button>
                     <button
-                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98]"
+                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(4)"
                     >
                         <div
@@ -262,7 +264,7 @@
                         </p>
                     </button>
                     <button
-                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98]"
+                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(5)"
                     >
                         <div
@@ -290,7 +292,7 @@
                         </p>
                     </button>
                     <button
-                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98]"
+                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(6)"
                     >
                         <div
@@ -318,7 +320,7 @@
                         </p>
                     </button>
                     <button
-                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98]"
+                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(7)"
                     >
                         <div
@@ -346,7 +348,7 @@
                         </p>
                     </button>
                     <button
-                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98]"
+                        class="sk-group sk-flex sk-flex-col sk-items-center sk-gap-2 sk-rounded-xl sk-bg-gradient-to-br sk-from-primary-500 sk-to-primary-700 sk-p-4 sk-shadow-lg sk-shadow-primary-600/30 sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-xl hover:sk-shadow-primary-600/40 active:sk-scale-[0.98] dark:sk-from-primary-700 dark:sk-to-primary-900"
                         @click="goTo(8)"
                     >
                         <div
@@ -448,11 +450,11 @@
                         class="sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                     >
                         <h3
-                            class="sk-mb-3 sk-font-bold sk-text-primary-900 dark:sk-text-primary-100"
+                            class="sk-mb-3 sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                         >
                             Hvis du frygter for din sikkerhed:
                         </h3>
-                        <ul class="sk-grid sk-gap-2 sk-text-sm">
+                        <ul class="sk-grid sk-gap-2 sk-text-sm sk-text-gray-700 dark:sk-text-gray-300">
                             <li class="sk-flex sk-gap-2">
                                 <span class="sk-text-primary-600">•</span>
                                 <span
@@ -496,7 +498,7 @@
             >
                 <div class="sk-flex sk-flex-col sk-gap-6">
                     <h2
-                        class="sk-flex sk-items-center sk-gap-3 sk-text-2xl sk-font-bold"
+                        class="sk-flex sk-items-center sk-gap-3 sk-text-2xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <div
                             class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-xl sk-bg-primary-600 sk-shadow-lg"
@@ -520,7 +522,7 @@
                     </h2>
 
                     <div class="sk-flex sk-flex-col sk-gap-3 sk-text-sm">
-                        <p>
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Der er forskellige kilder for at samle viden og
                             stille spørgsmål. Tøv ikke at klikke videre og
                             kontakte én af de steder der er der for at hjælpe
@@ -535,14 +537,12 @@
                         </p>
                     </div>
 
-                    <div
-                        class="sk-grid sk-grid-cols-1 sk-gap-4 md:sk-grid-cols-2"
-                    >
+                    <div class="sk-grid sk-grid-cols-2 sk-gap-4">
                         <div
                             class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                         >
                             <h3
-                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-primary-100"
+                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                             >
                                 Kvindehjemmet
                             </h3>
@@ -565,7 +565,7 @@
                             class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                         >
                             <h3
-                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-primary-100"
+                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                             >
                                 Lev Uden Vold
                             </h3>
@@ -588,7 +588,7 @@
                             class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                         >
                             <h3
-                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-primary-100"
+                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                             >
                                 Mandecentret
                             </h3>
@@ -611,7 +611,7 @@
                             class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                         >
                             <h3
-                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-primary-100"
+                                class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                             >
                                 Danner
                             </h3>
@@ -668,7 +668,7 @@
                         </svg>
                     </div> -->
                     <h2
-                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold"
+                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <svg
                             xmlns="https://www.w3.org/2000/svg"
@@ -687,7 +687,7 @@
                         Kom væk
                     </h2>
                     <div class="sk-grid sk-gap-3 sk-pb-4">
-                        <p class="">
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Det vigtigste er, at du og dine børn kommer sikkert
                             væk. Det er vigtigt at vide, at det at forlade et
                             voldeligt forhold kan være en af de farligste
@@ -696,7 +696,7 @@
                             Nedenfor er nogle tips til at hjælpe dig med at lave
                             en plan:
                         </p>
-                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4">
+                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4 sk-text-gray-700 dark:sk-text-gray-300">
                             <li>
                                 Pak en taske med nødvendigheder og vigtige
                                 dokumenter, som du kan efterlade hos en person,
@@ -738,7 +738,7 @@
                         </svg>
                     </div> -->
                     <h2
-                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold"
+                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <svg
                             xmlns="https://www.w3.org/2000/svg"
@@ -757,13 +757,13 @@
                         Lav en plan
                     </h2>
                     <div class="sk-grid sk-gap-3 sk-pb-4">
-                        <p class="">
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Sikkerheden for dig og dine børn (hvis du har nogen)
                             vil være din primære bekymring. Hvis du ikke er klar
                             til eller ikke kan forlade hjemmet sikkert, er der
                             nogle ting, du kan gøre for at forblive sikker nu:
                         </p>
-                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4">
+                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4 sk-text-gray-700 dark:sk-text-gray-300">
                             <li>
                                 Lav en sikkerhedsplan med hjælp fra en rådgiver.
                             </li>
@@ -787,15 +787,15 @@
                         </ul>
                     </div>
                     <div class="sk-grid sk-gap-3 sk-pb-4">
-                        <h3>Pakkeliste</h3>
-                        <p>
+                        <h3 class="sk-font-bold sk-text-gray-900 dark:sk-text-gray-200">Pakkeliste</h3>
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Det er ikke altid, man kan nå at pakke, inden man
                             flytter på krisecenter. Hvis du har mulighed for at
                             forberede dig, har vi samlet en liste med ting, som
                             er gode at tage med til dig selv og dine eventuelle
                             børn:
                         </p>
-                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4">
+                        <ul class="sk-grid sk-list-disc sk-gap-2 sk-pl-4 sk-text-gray-700 dark:sk-text-gray-300">
                             <li>Tøj</li>
                             <li>MitID, sygesikringskort, kørekort, pas</li>
                             <li>Dankort og kontanter (hvis du har nogle)</li>
@@ -836,7 +836,7 @@
                         </svg>
                     </div> -->
                     <h2
-                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold"
+                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <svg
                             xmlns="https://www.w3.org/2000/svg"
@@ -855,13 +855,13 @@
                         Online sikkerhed
                     </h2>
                     <div class="sk-grid sk-gap-3 sk-pb-4">
-                        <p class="">
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Den sikreste måde at surfe på nettet, hvis du
                             mistænker, at din browserhistorik bliver overvåget,
                             er at bruge din browsers private eller
                             inkognito-tilstand.
                         </p>
-                        <p class="">
+                        <p class="sk-text-gray-700 dark:sk-text-gray-300">
                             Hvis du tror, din enhed er kompromitteret af
                             spyware, bør du overveje at bruge en anden enhed, da
                             noget spyware stadig kan overvåge
@@ -869,7 +869,7 @@
                             steder såsom biblioteker for at låne deres
                             computere.
                         </p>
-                        <ul class="sk-grid sk-gap-2">
+                        <ul class="sk-grid sk-gap-2 sk-text-gray-700 dark:sk-text-gray-300">
                             <li>
                                 <strong>Safari:</strong><br />
                                 Dansk: Åbn Safari > Arkiv > Ny Privat Vindue<br />
@@ -948,7 +948,7 @@
                         </svg>
                     </div> -->
                     <h2
-                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold"
+                        class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
                     >
                         <svg
                             xmlns="https://www.w3.org/2000/svg"
@@ -974,7 +974,7 @@
                             ikke svar på dit spørgsmål, så
                             <a @click="goTo(4)">kontakt et krisecenter</a>.
                         </span>
-                        <ul class="sk-mt-6 sk-grid sk-gap-4">
+                        <ul class="sk-mt-6 sk-grid sk-gap-4 sk-text-gray-700 dark:sk-text-gray-300">
                             <li
                                 class="sk-grid sk-overflow-hidden sk-rounded-md sk-bg-primary-600/10"
                             >
@@ -984,13 +984,13 @@
                                     vold. Hvad skal jeg gøre?</strong
                                 >
                                 <div class="sk-grid sk-gap-2 sk-p-4">
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Du tænker måske, at der sker noget i dit
                                         liv, som føles forkert. Men du er i
                                         tvivl, om der er tale om vold. Det er
                                         helt normalt.
                                     </p>
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Vold er mere end fysiske handlinger. Det
                                         kan for eksempel være, at din partner
                                         truer dig, hvis du ikke gør, som eller
@@ -1002,7 +1002,7 @@
                                         været udsat for mange forskellige former
                                         for vold.
                                     </p>
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Hvis du er det i tvivl, om du er udsat
                                         for vold, så
                                         <a @click="goTo(4)"
@@ -1022,7 +1022,7 @@
                                     krisecenter?</strong
                                 >
                                 <div class="sk-grid sk-gap-2 sk-p-4">
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Ja. I udgangspunktet skal du selv betale
                                         en mindre del af opholdet, når du bor på
                                         et krisecenter i Danmark. Om du skal
@@ -1042,12 +1042,12 @@
                                     Skkr, jeg kan snakke med?</strong
                                 >
                                 <div class="sk-grid sk-gap-2 sk-p-4">
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Nej, for nu er Skkr kun et sikkert
                                         mellemled mellem dig og et eventuelt
                                         krisecenter.
                                     </p>
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Har du brug for at snakke med nogen,
                                         anbefaler vi at
                                         <a @click="goTo(4)"
@@ -1068,7 +1068,7 @@
                                     psykisk vold?</strong
                                 >
                                 <div class="sk-grid sk-gap-2 sk-p-4">
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Psykisk vold kan være svært at definere.
                                         Et dysfunktionelt forhold er ikke
                                         nødvendigvis præget af psykisk vold, men
@@ -1077,7 +1077,7 @@
                                         aldrig med at sige det højt og bed om
                                         hjælp, hvis du er i tvivl.
                                     </p>
-                                    <p>
+                                    <p class="sk-text-gray-700 dark:sk-text-gray-300">
                                         Du kan kontakte Kvindehjemmet på
                                         <a href="tel:004535819845"
                                             >35 81 98 45</a
