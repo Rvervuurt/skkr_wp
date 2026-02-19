@@ -31,6 +31,7 @@ $skkr_includes = [
     'src/acf-gutenberg-blocks.php',
     'src/enqueue-scripts.php',
     'src/footer-menu-walker.php',
+    'src/modal-slides-cpt.php',
 ];
 
 array_walk($skkr_includes, function ($file) {

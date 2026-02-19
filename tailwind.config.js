@@ -9,6 +9,7 @@ module.exports = {
     "./partials/**/*.php",
     "./templates/**/*.php",
   ],
+  safelist: ["sk-w-5", "sk-h-5"],
   theme: {
     extend: {
       fontFamily: {
