@@ -126,18 +126,18 @@
                             <div
                                 x-show="currentSlide?.acf?.parent_button_svg"
                                 class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-xl sk-bg-red-600 sk-text-white sk-shadow-lg"
-                                x-html="currentSlide?.acf?.parent_button_svg"
+                                x-html="sanitizeSvg(currentSlide?.acf?.parent_button_svg)"
                             ></div>
                             <h2
                                 x-show="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
-                                class="sk-mx-auto sk-text-xl sk-font-bold sk-text-red-900 dark:sk-text-red-100"
+                                class="sk-text-xl sk-font-bold sk-text-red-900 dark:sk-text-red-100"
                                 x-text="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
                             ></h2>
                         </div>
                         <p
                             x-show="currentSlide?.acf?.modal_title_subtext"
                             class="sk-flex sk-items-center sk-gap-2 sk-text-base sk-text-red-900 dark:sk-text-red-100"
-                            x-html="currentSlide?.acf?.modal_title_subtext"
+                            x-html="sanitizeHtml(currentSlide?.acf?.modal_title_subtext)"
                         ></p>
                     </div>
 
@@ -154,7 +154,7 @@
                             <div
                                 x-show="currentSlide?.acf?.parent_button_svg"
                                 class="sk-flex sk-h-12 sk-w-12 sk-items-center sk-justify-center sk-rounded-lg sk-bg-primary-600 sk-text-white"
-                                x-html="currentSlide?.acf?.parent_button_svg"
+                                x-html="sanitizeSvg(currentSlide?.acf?.parent_button_svg)"
                             ></div>
                             <span
                                 x-text="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
@@ -163,7 +163,7 @@
                         <p
                             x-show="currentSlide?.acf?.modal_title_subtext"
                             class="sk-text-left sk-text-gray-950 dark:sk-text-gray-200"
-                            x-html="currentSlide?.acf?.modal_title_subtext"
+                            x-html="sanitizeHtml(currentSlide?.acf?.modal_title_subtext)"
                         ></p>
                     </div>
 
@@ -171,7 +171,7 @@
                     <div
                         x-show="currentSlide?.acf?.modal_content"
                         class="sk-prose sk-prose-sm sk-max-w-none sk-text-gray-700 dark:sk-prose-invert dark:sk-text-gray-300"
-                        x-html="currentSlide?.acf?.modal_content"
+                        x-html="sanitizeHtml(currentSlide?.acf?.modal_content)"
                     ></div>
 
                     <!-- Buttons from ACF repeater -->
@@ -187,7 +187,7 @@
                                 :key="index"
                             >
                                 <a
-                                    :href="button.button_link?.url || '#'"
+                                    :href="safeUrl(button.button_link?.url)"
                                     :target="button.button_link?.target || '_self'"
                                     class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-p-6 sk-shadow-lg sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl active:sk-scale-[0.98]"
                                     :class="button.button_style === 'danger' ?
@@ -202,7 +202,7 @@
                                     >
                                         <div
                                             class="sk-flex sk-items-center sk-text-white"
-                                            x-html="button.button_optional_svg"
+                                            x-html="sanitizeSvg(button.button_optional_svg)"
                                         ></div>
                                     </div>
 
@@ -251,7 +251,7 @@
                                     <div class="sk-flex sk-flex-col sk-gap-2">
                                         <a
                                             x-show="contact.contact_link?.url"
-                                            :href="contact.contact_link?.url"
+                                            :href="safeUrl(contact.contact_link?.url)"
                                             :target="contact.contact_link?.target || '_blank'"
                                             class="sk-btn sk-btn-primary sk-w-full sk-justify-center sk-text-sm"
                                             x-text="contact.contact_link?.title || contact.contact_link?.url"
@@ -290,7 +290,7 @@
                                 >
                                     <div
                                         class="sk-flex sk-items-center sk-justify-center sk-text-white"
-                                        x-html="child.acf?.parent_button_svg"
+                                        x-html="sanitizeSvg(child.acf?.parent_button_svg)"
                                     ></div>
                                 </div>
 

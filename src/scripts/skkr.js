@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function skkrInit() {
   const footerIcon = document.getElementById("skkr-icon");
 
   footerIcon.innerHTML =
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalContent.src = "https://skkr.dk/wp-content/themes/skkr_wp/skkr.html";
     modalContent.className =
       "modal-content sk-relative sk-top-10 sk-h-full sk-max-h-[520px] sk-w-full sk-max-w-xl";
+    modalContent.sandbox = "allow-scripts allow-same-origin allow-popups";
 
     // Append modal content to modal
     modal.appendChild(modalContent);
@@ -63,4 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.removeChild(modal);
     }
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", skkrInit);
+} else {
+  skkrInit();
+}
