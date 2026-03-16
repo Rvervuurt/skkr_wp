@@ -21,9 +21,12 @@
             }
         })();
     </script>
+    <?php require_once get_template_directory() . '/dist/sri.php'; ?>
     <script
       type="text/javascript"
       src="<?= get_template_directory_uri(); ?>/dist/scripts/skkr.js"
+      integrity="<?= SKKR_JS_SRI; ?>"
+      crossorigin="anonymous"
     ></script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +61,11 @@
 
         <!-- Desktop Navigation -->
         <div class="sk-hidden md:sk-block">
+            
             <ul class="sk-flex sk-items-center sk-gap-6 dark:sk-text-white">
+                <li>
+                    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="skkr" data-color="#ea4307" data-emoji="" data-font="Lato" data-text="Støt Skkr" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+                </li>
                 <?php
                 // You can replace these with WordPress menu
                 wp_nav_menu(array(

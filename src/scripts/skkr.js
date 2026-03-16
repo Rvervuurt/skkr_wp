@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     skkrStyle.rel = "stylesheet";
     skkrStyle.href =
       "https://skkr.dk/wp-content/themes/skkr_wp/dist/styles/main.css";
+    skkrStyle.integrity = "__MAIN_CSS_INTEGRITY__";
+    skkrStyle.crossOrigin = "anonymous";
     document.head.appendChild(skkrStyle);
 
     // Modal

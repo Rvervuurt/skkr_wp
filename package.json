@@ -8,7 +8,7 @@
 	"scripts": {
 		"dev": "mix",
 		"watch": "mix watch",
-		"prod": "mix --production"
+		"prod": "mix --production && node scripts/generate-sri.mjs"
 	},
 	"engines": {
 		"node": ">= 14.0"
