@@ -88,6 +88,15 @@
             <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
         </div>
     </div>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+    kofiWidgetOverlay.draw('skkrdk', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Støt Skkr',
+        'floating-chat.donateButton.background-color': '#e94408',
+        'floating-chat.donateButton.text-color': '#fff'
+    });
+    </script>
 </footer>
 
 <?php wp_footer(); ?>

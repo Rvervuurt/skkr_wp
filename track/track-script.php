@@ -18,12 +18,12 @@ if (file_exists($logFile)) {
 // Extract domain only
 $host = parse_url($referer, PHP_URL_HOST) ?? 'unknown';
 
-// Skip tracking if the domain is skkr.dk
-if (str_ends_with($host, 'skkr.dk')) {
-    header('Content-Type: image/gif');
-    echo base64_decode('R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==');
-    exit;
-}
+// // Skip tracking if the domain is skkr.dk
+// if (str_ends_with($host, 'skkr.dk')) {
+//     header('Content-Type: image/gif');
+//     echo base64_decode('R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==');
+//     exit;
+// }
 
 $found = false;
 

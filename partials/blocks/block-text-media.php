@@ -91,7 +91,7 @@ $img_id = get_field('media');
                     <div>
                         <p>2. Tilføj denne div til stedet hvor du vil integrere vores ikon</p>
                         <div class="sk-flex sk-w-full sk-items-center sk-gap-4 lg:sk-flex-nowrap">
-                            <pre id="copy-button-tag">&lt;button id="skkr-icon"&gt;&lt;/button&gt;</pre>
+                            <pre id="copy-button-tag">&lt;button id="skkr-icon" style="width: 32px;"&gt;&lt;/button&gt;</pre>
                             <div class="sk-group sk-relative">
                                 <p class="sk-absolute -sk-top-7 sk-left-1/2 -sk-translate-x-1/2 sk-whitespace-nowrap sk-rounded sk-bg-neutral-900 sk-px-1 sk-py-0.5 sk-text-xs sk-text-white sk-opacity-0 sk-transition-opacity group-hover:sk-opacity-100">
                                     Klik for at kopiere
@@ -103,7 +103,7 @@ $img_id = get_field('media');
                                 </button>
                             </div>
                         </div>
-                        <p><small>Skkr-logoet er 32px*32px og vil tage være samme farven som teksten.</small></p>
+                        <p><small>Skkr-logoet fylder 100% bredde af elementet, så sæt gerne en størrelse på der passer jeres side. Derudover vil logoet tage være samme farven som teksten.</small></p>
                     </div>
                 </div>
             <?php elseif ($type === 'example'): ?>
@@ -183,7 +183,7 @@ $img_id = get_field('media');
                             </clipPath>
                             </defs>
                         </svg>
-                        <button id="skkr-icon"></button>
+                        <button id="skkr-icon" class="sk-h-8 sk-w-8"></button>
                     </div>
                     
                 </div>
