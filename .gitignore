@@ -4,7 +4,6 @@ npm-debug.log
 yarn-error.log
 
 # Build files
-dist/
 mix-manifest.json
 
 # OS files

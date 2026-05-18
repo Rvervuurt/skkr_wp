@@ -1,16 +1,17 @@
 <!doctype html>
 <html>
     <head>
-        <meta name="color-scheme" content="dark">
+        <meta name="color-scheme" content="light dark">
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./dist/styles/main.css" rel="stylesheet" />
+        <style>html, body { background: transparent; }</style>
         <!-- Single standalone Alpine.js bundle -->
         <script defer src="./dist/scripts/skkr_alpine.js"></script>
     </head>
     <body class="sk-body modal">
         <div
-            class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 sk-shadow-2xl dark:sk-bg-gray-900 dark:sk-shadow-2xl dark:sk-shadow-black/50"
+            class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 dark:sk-bg-gray-900"
             x-data="modalSlides()"
             x-init="init()"
         >

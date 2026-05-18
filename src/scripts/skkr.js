@@ -42,6 +42,10 @@ function skkrInit() {
     modalContent.className =
       "modal-content sk-relative sk-top-10 sk-h-full sk-max-h-[520px] sk-w-full sk-max-w-xl";
     modalContent.sandbox = "allow-scripts allow-same-origin allow-popups";
+    // color-scheme: normal disables Chrome's opaque UA backdrop on the iframe
+    // element, so the rounded inner content isn't framed by a square box.
+    modalContent.style.cssText =
+      "background: transparent; color-scheme: normal; border: 0;";
 
     // Append modal content to modal
     modal.appendChild(modalContent);
