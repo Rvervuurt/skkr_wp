@@ -84,7 +84,7 @@ if (empty($brands) && !$is_preview) {
                             'alt'   => $brand_name ?: '',
                         ]);
                     ?>
-                        <li class="sk-flex sk-w-[clamp(9rem,22vw,13rem)] sk-flex-none sk-items-center sk-justify-center sk-rounded-3xl sk-border sk-border-black/5 sk-bg-white sk-p-8">
+                        <li class="sk-flex sk-w-[clamp(9rem,22vw,13rem)] sk-flex-none sk-items-center sk-justify-center sk-rounded-3xl sk-border sk-border-black/5 sk-bg-primary-100 sk-p-8">
                             <?php if ($brand_link): ?>
                                 <a href="<?php echo esc_url($brand_link); ?>" class="sk-flex sk-h-full sk-w-full" target="_blank" rel="noopener" <?php if ($brand_name): ?>aria-label="<?php echo esc_attr($brand_name); ?>"<?php endif; ?>>
                                     <?php echo $image; ?>
