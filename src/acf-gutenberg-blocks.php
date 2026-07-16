@@ -61,6 +61,22 @@ if (!function_exists('skkr_acf_register_block')) {
                 ]
             ]);
 
+            // Register As seen on block
+            acf_register_block([
+                'name'              => 'as-seen-on',
+                'title'             => __('As seen on', 'skkr'),
+                'description'       => __('A brand logo section that becomes an auto-sliding carousel with many logos.', 'skkr'),
+                'render_template'   => 'partials/blocks/block-as-seen-on.php',
+                'category'          => 'skkr-blocks',
+                'icon'              => 'images-alt2',
+                'mode'              => 'edit',
+                'keywords'          => ['logo', 'brands', 'slider', 'as seen on'],
+                'supports'          => [
+                    'align' => false,
+                    'anchor' => true,
+                ]
+            ]);
+
             // Register Text block
             acf_register_block([
                 'name'              => 'text',
