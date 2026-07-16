@@ -13,8 +13,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Source Sans", "sans-serif"],
-        serif: ["Pangaia", "serif"],
+        // Headlines (font-serif) intentionally map to Open Sans too
+        sans: ["Open Sans", "sans-serif"],
+        serif: ["Open Sans", "sans-serif"],
         mono: ["Courier Prime", "serif"],
       },
       colors: {

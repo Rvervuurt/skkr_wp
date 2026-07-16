@@ -11,32 +11,43 @@ const mix = require("laravel-mix");
  |
  */
 
+// Dev/watch builds go to "dev/" (gitignored) so the committed production
+// "dist/" folder is only ever touched by `npm run prod`.
+const outDir = mix.inProduction() ? "dist" : "dev";
+
 // Public Path
-mix.setPublicPath("./dist");
+mix.setPublicPath(`./${outDir}`);
 
 // BrowserSync
 mix.browserSync({
   proxy: "https://skkrwp.test",
-  files: ["*.php", "partials/**/*.php", "templates/**/*.php", "src/**/*.php"],
+  files: [
+    "*.php",
+    "partials/**/*.php",
+    "templates/**/*.php",
+    "src/**/*.php",
+    "skkr.html",
+    "dev/**/*",
+  ],
   injectChanges: true,
   notify: false,
   https: true,
 });
 
 // JavaScript
-mix.js("src/scripts/main.js", "dist/scripts"); // Standalone bundle
-mix.js("src/scripts/skkr.js", "dist/scripts"); // Standalone bundle
-mix.js("src/scripts/skkr_alpine.js", "dist/scripts"); // Standalone bundle for iframe
+mix.js("src/scripts/main.js", `${outDir}/scripts`); // Standalone bundle
+mix.js("src/scripts/skkr.js", `${outDir}/scripts`); // Standalone bundle
+mix.js("src/scripts/skkr_alpine.js", `${outDir}/scripts`); // Standalone bundle for iframe
 
 // Styles
-mix.postCss("src/styles/main.css", "dist/styles", [
+mix.postCss("src/styles/main.css", `${outDir}/styles`, [
   require("postcss-import"),
   require("tailwindcss"),
   require("autoprefixer"),
 ]);
 
-// Copy fonts (won't trigger rebuild due to watchOptions ignoring dist/)
-mix.copyDirectory("assets/fonts", "dist/fonts");
+// Copy fonts (won't trigger rebuild due to watchOptions ignoring build output)
+mix.copyDirectory("assets/fonts", `${outDir}/fonts`);
 
 // Options
 mix.options({
@@ -44,10 +55,10 @@ mix.options({
   postCss: [require("autoprefixer")],
 });
 
-// Configure webpack to ignore dist, node_modules, and system files
+// Configure webpack to ignore build output, node_modules, and system files
 mix.webpackConfig({
   watchOptions: {
-    ignored: /node_modules|dist|\.git|\.DS_Store/,
+    ignored: /node_modules|[\\/](dist|dev)[\\/]|\.git|\.DS_Store/,
     aggregateTimeout: 300,
     poll: false,
   },

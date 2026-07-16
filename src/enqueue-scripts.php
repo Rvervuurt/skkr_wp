@@ -14,6 +14,16 @@ if (!function_exists('skkr_mix')) {
     function skkr_mix($path) {
         static $manifest;
 
+        // Local (*.test) serves the gitignored dev/ build written by
+        // `npm run watch`; everywhere else serves the committed dist/ build.
+        $host = $_SERVER['HTTP_HOST'] ?? '';
+        if (substr($host, -5) === '.test') {
+            $dev_path = preg_replace('#^/dist/#', '/dev/', $path);
+            if (file_exists(get_template_directory() . $dev_path)) {
+                return get_template_directory_uri() . $dev_path;
+            }
+        }
+
         if (!$manifest) {
             $manifest_path = get_template_directory() . '/mix-manifest.json';
             if (file_exists($manifest_path)) {

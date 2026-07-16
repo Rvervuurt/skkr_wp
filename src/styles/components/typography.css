@@ -1,49 +1,8 @@
+/* Variable font: one file covers weights 300-800 */
 @font-face {
-  font-family: "Source Sans";
-  src:
-    url("../fonts/SourceSans3-Regular.woff2") format("woff2"),
-    url("../fonts/SourceSans3-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Source Sans";
-  src:
-    url("../fonts/SourceSans3-Light.woff2") format("woff2"),
-    url("../fonts/SourceSans3-Light.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pangaia";
-  src:
-    url("../fonts/PPPangaia-Bold.woff2") format("woff2"),
-    url("../fonts/PPPangaia-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pangaia";
-  src:
-    url("../fonts/PPPangaia-Medium.woff2") format("woff2"),
-    url("../fonts/PPPangaia-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Pangaia";
-  src:
-    url("../fonts/PPPangaia-Ultralight.woff2") format("woff2"),
-    url("../fonts/PPPangaia-Ultralight.woff") format("woff");
-  font-weight: 200;
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Variable.woff2") format("woff2");
+  font-weight: 300 800;
   font-style: normal;
   font-display: swap;
 }
@@ -69,7 +28,7 @@
   .sk-body h4,
   .sk-body h5,
   .sk-body h6 {
-    @apply sk-font-serif  sk-font-medium sk-text-primary-950 dark:sk-text-dark-text bg-primary-600:!sk-text-white;
+    @apply sk-font-serif !sk-leading-tight sk-font-bold sk-text-primary-950 dark:sk-text-dark-text bg-primary-600:!sk-text-white;
   }
 
   .sk-body h1 {
