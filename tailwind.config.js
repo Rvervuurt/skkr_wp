@@ -37,6 +37,16 @@ module.exports = {
         "dark-text": "#e8d5c4",
         "dark-text-muted": "#b8a99a",
       },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        // Duration is set per block instance via the --asa-duration inline style
+        marquee: "marquee var(--asa-duration, 30s) linear infinite",
+      },
     },
   },
   variants: {
