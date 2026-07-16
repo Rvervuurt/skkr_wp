@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="color-scheme" content="light dark">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./dist/styles/main.css" rel="stylesheet" />
+        <style>html, body { background: transparent; }</style>
+        <!-- Single standalone Alpine.js bundle -->
+        <script defer src="./dist/scripts/skkr_alpine.js"></script>
+    </head>
+    <body class="sk-body modal">
+        <div
+            class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 dark:sk-bg-gray-900"
+            x-data="modalSlides()"
+            x-init="init()"
+        >
+            <header
+                class="sk-relative sk-flex sk-w-full sk-items-center sk-justify-center sk-border-b sk-border-primary-200 sk-px-6 sk-py-4 dark:sk-border-gray-700 dark:sk-bg-gray-800/80"
+            >
+                <button
+                    x-show="currentSlide && currentSlide.parent"
+                    x-transition
+                    @click="goToParent()"
+                    class="sk-absolute sk-left-4 sk-flex sk-items-center sk-gap-2 sk-rounded-md sk-px-3 sk-py-2 sk-text-primary-600 sk-transition-colors hover:sk-bg-primary-100 dark:sk-text-primary-400 dark:hover:sk-bg-gray-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        class="sk-h-5 sk-w-5"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                        />
+                    </svg>
+                    <span class="sk-text-sm">Tilbage</span>
+                </button>
+                <a
+                    href="https://skkr.dk"
+                    class="sk- sk-flex sk-items-center sk-gap-2 sk-text-primary-600 dark:sk-text-primary-400"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="-sk-mt-1 sk-h-4 sk-w-4"
+                        viewBox="0 0 64 64"
+                        fill="none"
+                    >
+                        <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M32 64c17.673 0 32-14.327 32-32C64 14.327 49.673 0 32 0 14.327 0 0 14.327 0 32c0 17.673 14.327 32 32 32Zm11.944-32.833a2.464 2.464 0 0 1-2.464 2.387h-.005a2.464 2.464 0 0 1-2.463-2.387 2.275 2.275 0 0 0-4.547 0l-.001.031v16.3l-.002.1a7.05 7.05 0 0 1-1.602 4.112c-1.214 1.46-3.105 2.47-5.666 2.47-2.564 0-4.452-1.014-5.641-2.517a6.883 6.883 0 0 1-1.459-4.165 2.464 2.464 0 1 1 4.929 0c0 .258.107.743.395 1.107.202.254.631.646 1.776.646 1.146 0 1.63-.396 1.877-.693.314-.377.444-.859.464-1.125V31.198l-.001-.03a2.275 2.275 0 0 0-4.548 0 2.465 2.465 0 0 1-2.463 2.386h-.005a2.464 2.464 0 0 1-2.463-2.387 2.275 2.275 0 0 0-4.547 0 2.465 2.465 0 0 1-2.464 2.387h-.002a2.464 2.464 0 0 1-2.464-2.483C10.67 19.318 20.225 9.82 31.999 9.82s21.33 9.498 21.421 21.25a2.464 2.464 0 0 1-2.464 2.484h-.002a2.464 2.464 0 0 1-2.463-2.387 2.275 2.275 0 0 0-4.547 0Z"
+                            clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                    <span class="sk-font-serif sk-text-sm">Skkr</span>
+                </a>
+            </header>
+
+            <!-- Loading state -->
+            <div
+                x-show="loading"
+                class="sk-flex sk-h-5/6 sk-w-full sk-items-center sk-justify-center"
+            >
+                <div
+                    class="sk-text-center sk-text-gray-600 dark:sk-text-gray-400"
+                >
+                    <svg
+                        class="sk-mx-auto sk-mb-4 sk-h-8 sk-w-8 sk-animate-spin"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <circle
+                            class="sk-opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            stroke-width="4"
+                        ></circle>
+                        <path
+                            class="sk-opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                    </svg>
+                    <p>Indlæser...</p>
+                </div>
+            </div>
+
+            <!-- Error state -->
+            <div
+                x-show="error && !loading"
+                class="sk-flex sk-h-5/6 sk-w-full sk-items-center sk-justify-center sk-px-6"
+            >
+                <div
+                    class="sk-text-center sk-text-red-600 dark:sk-text-red-400"
+                >
+                    <p class="sk-mb-2 sk-font-bold">Der opstod en fejl</p>
+                    <p class="sk-text-sm" x-text="error"></p>
+                </div>
+            </div>
+
+            <!-- Dynamic slide content -->
+            <div
+                x-show="!loading && !error && currentSlide"
+                class="sk-relative sk-flex sk-h-5/6 sk-w-full sk-flex-col sk-gap-6 sk-overflow-y-auto sk-px-6 sk-py-10"
+                x-transition:enter="sk-transition-all sk-relative sk-ease-out sk-duration-500"
+                x-transition:enter-start="sk-opacity-0 sk-translate-x-4"
+                x-transition:enter-end="sk-opacity-100 sk-translate-x-0"
+                x-transition:leave="sk-transition-all sk-absolute sk-ease-in sk-duration-300"
+                x-transition:leave-start="sk-opacity-100 sk-translate-x-0"
+                x-transition:leave-end="sk-opacity-0 -sk-translate-x-4"
+            >
+                <div class="sk-flex sk-flex-col sk-gap-6">
+                    <!-- Emergency wrapper for title & content -->
+                    <div
+                        x-show="currentSlide?.acf?.modal_is_emergency && (currentSlide?.acf?.modal_title || currentSlide?.title?.rendered || currentSlide?.acf?.modal_title_subtext)"
+                        class="sk-flex sk-flex-col sk-gap-4 sk-rounded-xl sk-border-2 sk-border-red-600 sk-bg-red-50 sk-p-5 sk-shadow-lg sk-shadow-red-600/20 dark:sk-border-red-500 dark:sk-bg-red-950/30"
+                    >
+                        <div class="sk-flex sk-items-center sk-gap-3">
+                            <!-- Emergency icon in title -->
+                            <div
+                                x-show="currentSlide?.acf?.parent_button_svg"
+                                class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-xl sk-bg-red-600 sk-text-white sk-shadow-lg"
+                                x-html="sanitizeSvg(currentSlide?.acf?.parent_button_svg)"
+                            ></div>
+                            <h2
+                                x-show="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
+                                class="sk-text-xl sk-font-bold sk-text-red-900 dark:sk-text-red-100"
+                                x-text="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
+                            ></h2>
+                        </div>
+                        <p
+                            x-show="currentSlide?.acf?.modal_title_subtext"
+                            class="sk-flex sk-items-center sk-gap-2 sk-text-base sk-text-red-900 dark:sk-text-red-100"
+                            x-html="sanitizeHtml(currentSlide?.acf?.modal_title_subtext)"
+                        ></p>
+                    </div>
+
+                    <!-- Normal title & subtext (when not emergency) -->
+                    <div
+                        x-show="!currentSlide?.acf?.modal_is_emergency && (currentSlide?.acf?.modal_title || currentSlide?.title?.rendered)"
+                        class="sk-flex sk-flex-col sk-gap-3"
+                    >
+                        <h2
+                            x-show="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
+                            class="sk-flex sk-w-full sk-flex-wrap sk-items-center sk-gap-2.5 sk-text-3xl sk-font-bold sk-text-gray-900 dark:sk-text-gray-200"
+                        >
+                            <!-- Optional SVG icon in title -->
+                            <div
+                                x-show="currentSlide?.acf?.parent_button_svg"
+                                class="sk-flex sk-h-12 sk-w-12 sk-items-center sk-justify-center sk-rounded-lg sk-bg-primary-600 sk-text-white"
+                                x-html="sanitizeSvg(currentSlide?.acf?.parent_button_svg)"
+                            ></div>
+                            <span
+                                x-text="currentSlide?.acf?.modal_title || currentSlide?.title?.rendered"
+                            ></span>
+                        </h2>
+                        <p
+                            x-show="currentSlide?.acf?.modal_title_subtext"
+                            class="sk-text-left sk-text-gray-950 dark:sk-text-gray-200"
+                            x-html="sanitizeHtml(currentSlide?.acf?.modal_title_subtext)"
+                        ></p>
+                    </div>
+
+                    <!-- Slide content -->
+                    <div
+                        x-show="currentSlide?.acf?.modal_content"
+                        class="sk-prose sk-prose-sm sk-max-w-none sk-text-gray-700 dark:sk-prose-invert dark:sk-text-gray-300"
+                        x-html="sanitizeHtml(currentSlide?.acf?.modal_content)"
+                    ></div>
+
+                    <!-- Buttons from ACF repeater -->
+                    <template
+                        x-if="currentSlide?.acf?.modal_buttons && currentSlide.acf.modal_buttons.length > 0"
+                    >
+                        <div
+                            class="sk-flex sk-flex-col sk-gap-4"
+                            :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-grid sk-grid-cols-2' : ''"
+                        >
+                            <template
+                                x-for="(button, index) in currentSlide.acf.modal_buttons"
+                                :key="index"
+                            >
+                                <a
+                                    :href="safeUrl(button.button_link?.url)"
+                                    :target="button.button_link?.target || '_self'"
+                                    class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-p-6 sk-shadow-lg sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl active:sk-scale-[0.98]"
+                                    :class="button.button_style === 'danger' ?
+                                        'sk-from-red-500 sk-to-red-700 sk-shadow-red-600/30 hover:sk-shadow-red-600/40' :
+                                        'sk-from-primary-500 sk-to-primary-700 sk-shadow-primary-600/30 hover:sk-shadow-xl hover:sk-shadow-primary-600/40 dark:sk-from-primary-700 dark:sk-to-primary-900'"
+                                >
+                                    <!-- Optional SVG Icon -->
+                                    <div
+                                        x-show="button.button_optional_svg"
+                                        class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-lg sk-bg-white/20 sk-backdrop-blur-sm sk-transition-transform group-hover:sk-rotate-3"
+                                        :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-h-10 sk-w-10' : ''"
+                                    >
+                                        <div
+                                            class="sk-flex sk-items-center sk-text-white"
+                                            x-html="sanitizeSvg(button.button_optional_svg)"
+                                        ></div>
+                                    </div>
+
+                                    <!-- Button content -->
+                                    <div
+                                        class="sk-flex sk-flex-col sk-gap-1 sk-text-white"
+                                        :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-items-center sk-text-center' : 'sk-text-left'"
+                                    >
+                                        <p
+                                            class="sk-font-bold"
+                                            :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-text-sm' : 'sk-text-lg'"
+                                            x-text="button.button_link?.title || 'Button'"
+                                        ></p>
+                                        <p
+                                            x-show="button.button_description"
+                                            class="sk-text-white/90"
+                                            :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-text-center sk-text-sm' : 'sk-text-sm'"
+                                            x-text="button.button_description"
+                                        ></p>
+                                    </div>
+                                </a>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Contact points from ACF repeater -->
+                    <template
+                        x-if="currentSlide?.acf?.modal_contact_points && currentSlide.acf.modal_contact_points.length > 0"
+                    >
+                        <div
+                            class="sk-gap-4"
+                            :class="currentSlide.acf.modal_contact_points.length >= 2 ? 'sk-grid sk-grid-cols-2' : 'sk-flex sk-flex-col'"
+                        >
+                            <template
+                                x-for="(contact, index) in currentSlide.acf.modal_contact_points"
+                                :key="index"
+                            >
+                                <div
+                                    class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
+                                >
+                                    <h3
+                                        x-show="contact.contact_title"
+                                        class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
+                                        x-text="contact.contact_title"
+                                    ></h3>
+                                    <div class="sk-flex sk-flex-col sk-gap-2">
+                                        <a
+                                            x-show="contact.contact_link?.url"
+                                            :href="safeUrl(contact.contact_link?.url)"
+                                            :target="contact.contact_link?.target || '_blank'"
+                                            class="sk-btn sk-btn-primary sk-w-full sk-justify-center sk-text-sm"
+                                            x-text="contact.contact_link?.title || contact.contact_link?.url"
+                                        ></a>
+                                        <a
+                                            x-show="contact.phone_number"
+                                            :href="'tel:' + contact.phone_number"
+                                            class="sk-btn sk-btn-white sk-btn-tel sk-w-full sk-justify-center sk-text-sm"
+                                            x-text="contact.phone_number"
+                                        ></a>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Child navigation buttons (uses parent_* fields) -->
+                    <div
+                        x-show="childSlides.length > 0"
+                        class="sk-flex sk-flex-col sk-gap-4"
+                        :class="childSlides.length === 2 ? 'sk-grid sk-grid-cols-2' : ''"
+                    >
+                        <template x-for="child in childSlides" :key="child.id">
+                            <button
+                                @click="goToSlide(child.id)"
+                                class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-p-6 sk-shadow-lg sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl active:sk-scale-[0.98]"
+                                :class="child.acf?.modal_is_emergency ?
+                                    'sk-from-red-500 sk-to-red-700 sk-shadow-red-600/30 hover:sk-shadow-red-600/40' :
+                                    'sk-from-primary-500 sk-to-primary-700 sk-shadow-primary-600/30 hover:sk-shadow-primary-600/40 dark:sk-from-primary-700 dark:sk-to-primary-900'"
+                            >
+                                <!-- Icon from parent_button_svg -->
+                                <div
+                                    x-show="child.acf?.parent_button_svg"
+                                    class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-lg sk-bg-white/20 sk-backdrop-blur-sm sk-transition-transform group-hover:sk-rotate-3"
+                                    :class="childSlides.length === 2 ? 'sk-h-10 sk-w-10' : ''"
+                                >
+                                    <div
+                                        class="sk-flex sk-items-center sk-justify-center sk-text-white"
+                                        x-html="sanitizeSvg(child.acf?.parent_button_svg)"
+                                    ></div>
+                                </div>
+
+                                <!-- Button content using parent_* fields -->
+                                <div
+                                    class="sk-flex sk-flex-col sk-gap-1 sk-text-left sk-text-white"
+                                >
+                                    <p
+                                        class="sk-font-bold"
+                                        :class="childSlides.length === 2 ? 'sk-text-sm' : 'sk-text-lg'"
+                                        x-text="child.acf?.parent_button_title || child.acf?.modal_title || child.title?.rendered"
+                                    ></p>
+                                    <p
+                                        x-show="child.acf?.parent_button_subtitle"
+                                        class="sk-text-white/90"
+                                        :class="childSlides.length === 2 ? 'sk-text-sm' : 'sk-text-sm'"
+                                        x-text="child.acf?.parent_button_subtitle"
+                                    ></p>
+                                </div>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function modalSlides() {
+                return {
+                    slides: [],
+                    currentSlideId: null,
+                    loading: true,
+                    error: null,
+
+                    get currentSlide() {
+                        return (
+                            this.slides.find(
+                                (s) => s.id === this.currentSlideId,
+                            ) || null
+                        );
+                    },
+
+                    get childSlides() {
+                        if (!this.currentSlideId) return [];
+                        return this.slides
+                            .filter((s) => s.parent === this.currentSlideId)
+                            .sort((a, b) => a.menu_order - b.menu_order);
+                    },
+
+                    async init() {
+                        try {
+                            await this.loadSlides();
+
+                            // Find and navigate to root slide (slide with no parent)
+                            const rootSlide = this.slides.find(
+                                (s) => s.parent === 0,
+                            );
+                            if (rootSlide) {
+                                this.currentSlideId = rootSlide.id;
+                            } else if (this.slides.length > 0) {
+                                // Fallback to first slide if no root found
+                                this.currentSlideId = this.slides[0].id;
+                            } else {
+                                this.error =
+                                    "Ingen slides fundet. Opret venligst slides i WordPress admin.";
+                            }
+
+                            this.loading = false;
+                        } catch (err) {
+                            console.error("Error loading slides:", err);
+                            this.error =
+                                "Kunne ikke indlæse slides. Tjek venligst din forbindelse.";
+                            this.loading = false;
+                        }
+                    },
+
+                    async loadSlides() {
+                        // Get WordPress site URL - adjust this to your actual WordPress URL
+                        const wpUrl = window.location.origin;
+                        const response = await fetch(
+                            `${wpUrl}/wp-json/wp/v2/modal-slides?per_page=100&orderby=menu_order&order=asc`,
+                        );
+
+                        if (!response.ok) {
+                            throw new Error(
+                                `HTTP error! status: ${response.status}`,
+                            );
+                        }
+
+                        this.slides = await response.json();
+                    },
+
+                    goToSlide(slideId) {
+                        this.currentSlideId = slideId;
+                    },
+
+                    goToParent() {
+                        if (this.currentSlide && this.currentSlide.parent) {
+                            this.currentSlideId = this.currentSlide.parent;
+                        }
+                    },
+                };
+            }
+        </script>
+    </body>
+</html>

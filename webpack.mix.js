@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -12,49 +12,58 @@ const mix = require('laravel-mix');
  */
 
 // Public Path
-mix.setPublicPath('./dist');
+mix.setPublicPath("./dist");
 
 // BrowserSync
 mix.browserSync({
-    proxy: 'dinero.test', // Change this to your local domain
-    files: [
-        'dist/**/*',
-        '**/*.php'
-    ],
-    injectChanges: true,
-    notify: false
+  proxy: "https://skkrwp.test",
+  files: ["*.php", "partials/**/*.php", "templates/**/*.php", "src/**/*.php"],
+  injectChanges: true,
+  notify: false,
+  https: true,
 });
 
 // JavaScript
-mix.js('src/scripts/main.js', 'dist/scripts')
-    .extract(); // Extract vendor libraries
+mix.js("src/scripts/main.js", "dist/scripts"); // Standalone bundle
+mix.js("src/scripts/skkr.js", "dist/scripts"); // Standalone bundle
+mix.js("src/scripts/skkr_alpine.js", "dist/scripts"); // Standalone bundle for iframe
 
 // Styles
-mix.postCss('src/styles/main.css', 'dist/styles', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
+mix.postCss("src/styles/main.css", "dist/styles", [
+  require("postcss-import"),
+  require("tailwindcss"),
+  require("autoprefixer"),
 ]);
 
-// Copy fonts
-mix.copyDirectory('assets/fonts', 'dist/fonts');
+// Copy fonts (won't trigger rebuild due to watchOptions ignoring dist/)
+mix.copyDirectory("assets/fonts", "dist/fonts");
 
 // Options
 mix.options({
-    processCssUrls: false,
-    postCss: [
-        require('autoprefixer'),
-    ]
+  processCssUrls: false,
+  postCss: [require("autoprefixer")],
+});
+
+// Configure webpack to ignore dist, node_modules, and system files
+mix.webpackConfig({
+  watchOptions: {
+    ignored: /node_modules|dist|\.git|\.DS_Store/,
+    aggregateTimeout: 300,
+    poll: false,
+  },
+  optimization: {
+    splitChunks: false, // Disable all code splitting - create standalone bundles
+  },
 });
 
 // Source maps
 if (!mix.inProduction()) {
-    mix.sourceMaps();
+  mix.sourceMaps();
 }
 
 // Versioning
 if (mix.inProduction()) {
-    mix.version();
+  mix.version();
 }
 
 // Disable OS notifications

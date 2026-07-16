@@ -4,11 +4,12 @@ A minimal WordPress theme skeleton with Tailwind CSS, Alpine.js, and ACF blocks.
 
 ## Features
 
-- 🎨 **Tailwind CSS** with plugins:
+- 🎨 **Tailwind CSS** with `sk-` prefix and plugins:
   - @tailwindcss/typography
   - @tailwindcss/forms
   - @tailwindcss/aspect-ratio
   - @tailwindcss/container-queries
+  - **Important**: All Tailwind classes must use the `sk-` prefix (e.g., `sk-flex`, `sk-bg-blue-500`)
 - ⚡ **Alpine.js** with plugins:
   - @alpinejs/collapse
   - @alpinejs/focus
@@ -111,7 +112,7 @@ Fields:
 - `hero_button_text` (Text) - Button label
 - `hero_button_link` (URL) - Button URL
 - `hero_background_style` (Select) - Options: `gradient`, `solid`
-- `hero_background_color` (Text) - Tailwind class (e.g., `bg-blue-500`)
+- `hero_background_color` (Text) - Tailwind class with prefix (e.g., `sk-bg-primary-500`)
 
 ### Text/Media Block
 Create a field group with location rule: **Block is equal to Text / Media**
@@ -138,16 +139,31 @@ npm run prod     # Build for production (minified)
 
 Edit `tailwind.config.js` to customize colors, fonts, spacing, etc.
 
+**Important: Tailwind Prefix**
+
+This theme uses the `sk-` prefix for all Tailwind classes to avoid conflicts with WordPress and other plugins.
+
+Examples:
+```html
+<!-- Standard Tailwind classes with sk- prefix -->
+<div class="sk-flex sk-items-center sk-gap-4 sk-p-6">
+  <h2 class="sk-text-2xl sk-font-bold sk-text-primary-600">Title</h2>
+  <button class="sk-bg-primary-500 sk-text-white sk-px-4 sk-py-2 sk-rounded">
+    Click me
+  </button>
+</div>
+```
+
 The theme includes a custom color palette:
-- `primary` (blue shades)
-- `neutral` (gray shades)
+- `primary` (orange shades from 50-950)
+- Custom font families: Source Sans, Pangaia, Courier Prime
 
 ### Adding Custom Blocks
 
 1. Register the block in `src/acf-gutenberg-blocks.php`
 2. Create the template in `partials/blocks/block-{name}.php`
 3. Configure ACF fields in WordPress admin
-4. Use Tailwind utility classes and Alpine.js for interactivity
+4. Use Tailwind utility classes with `sk-` prefix and Alpine.js for interactivity
 
 ### JavaScript Utilities
 
@@ -156,11 +172,13 @@ The theme includes several JavaScript utilities in `src/scripts/main.js`:
 - **Alpine.js**: Available globally as `window.Alpine`
 - **Smooth Scroll**: Automatic for anchor links
 
-Example Alpine.js usage:
+Example Alpine.js usage (with sk- prefix for Tailwind classes):
 ```html
-<div x-data="{ open: false }">
-  <button @click="open = !open">Toggle</button>
-  <div x-show="open" x-collapse>
+<div x-data="{ open: false }" class="sk-p-4">
+  <button @click="open = !open" class="sk-bg-primary-500 sk-text-white sk-px-4 sk-py-2 sk-rounded">
+    Toggle
+  </button>
+  <div x-show="open" x-collapse class="sk-mt-4 sk-p-4 sk-bg-gray-100">
     Content here
   </div>
 </div>

@@ -4,7 +4,6 @@ npm-debug.log
 yarn-error.log
 
 # Build files
-dist/
 mix-manifest.json
 
 # OS files
@@ -21,3 +20,4 @@ Thumbs.db
 wp-config.php
 wp-content/uploads/
 *.log
+track/script-usage.json

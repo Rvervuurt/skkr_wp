@@ -1,27 +1,48 @@
 .sk-body .sk-btn {
-  @apply sk-rounded-full sk-flex sk-items-center sk-bg-primary-600 sk-px-6 sk-py-3 sk-font-bold sk-text-white sk-transition-[opacity,top] hover:sk-opacity-80 sk-relative sk-top-0 active:sk-top-0.5;
+  @apply sk-rounded-xl sk-flex sk-items-center sk-bg-primary-600 sk-px-6 sk-py-3.5 sk-font-semibold sk-text-white sk-transition-all sk-duration-200 hover:sk-scale-[1.02] hover:sk-shadow-lg active:sk-scale-[0.98] sk-shadow-md;
 }
 
 .sk-body .sk-btn-sm {
-  @apply sk-px-4 sk-py-2 sk-text-sm;
+  @apply sk-px-4 sk-py-2 sk-text-sm sk-rounded-lg;
+}
+
+.sk-body .sk-btn-xs {
+  @apply sk-px-2 sk-py-1 sk-text-xs sk-rounded-md;
 }
 
 .sk-body .sk-btn-primary {
-  @apply sk-bg-primary-600 dark:sk-border dark:sk-border-primary-600 dark:sk-bg-transparent dark:sk-text-white;
+  @apply sk-bg-primary-600 hover:sk-bg-primary-700 dark:sk-bg-primary-600 dark:hover:sk-bg-primary-700 dark:sk-text-white;
 }
 
 .sk-body .sk-btn-secondary {
-  @apply sk-bg-black/20 sk-p-10 dark:sk-border dark:sk-border-white dark:sk-bg-white/20 dark:sk-text-white;
+  @apply sk-bg-black/10 sk-p-10 sk-backdrop-blur-sm hover:sk-bg-black/15 dark:sk-bg-white/10 dark:hover:sk-bg-white/15 dark:sk-text-white;
 }
 
 .sk-body .sk-btn-white {
-  @apply sk-border-2 sk-border-primary-600 sk-bg-white sk-text-primary-600;
+  @apply sk-border-2 sk-border-primary-600 sk-bg-white sk-text-primary-600 hover:sk-bg-primary-50 dark:sk-bg-gray-800 dark:sk-text-white dark:sk-border-white dark:hover:sk-bg-gray-700;
 }
 
 .sk-body .sk-btn-white-outline {
-  @apply sk-border-2 sk-border-white sk-text-white;
+  @apply sk-border-2 sk-border-white sk-text-white hover:sk-bg-white/10;
 }
 
 .sk-body .sk-btn-alert {
-  @apply sk-bg-red-600;
+  @apply sk-bg-red-600 hover:sk-bg-red-700 sk-shadow-lg sk-shadow-red-600/30 dark:sk-bg-red-600 dark:hover:sk-bg-red-700;
+}
+
+.sk-body .sk-btn-tel::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }

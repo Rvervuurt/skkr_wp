@@ -1,0 +1,1119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: skkr\n"
+"POT-Creation-Date: 2026-02-06 13:04+0100\n"
+"PO-Revision-Date: 2026-02-06 13:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: functions.php:39
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: partials/blocks/block-text.php:30
+msgid "Last updated:"
+msgstr "Sidst opdateret:"
+
+#: src/acf-gutenberg-blocks.php:19
+msgid "Hero"
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:20
+msgid "A hero section block."
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:35
+msgid "Text / Media"
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:36
+msgid "A 50/50 text and media section."
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:51
+msgid "Oneliner"
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:52
+msgid "A oneliner section."
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:67
+msgid "Text"
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:68
+msgid "A simple text block with title and content."
+msgstr ""
+
+#: src/acf-gutenberg-blocks.php:92
+msgid "Theme Blocks"
+msgstr ""
+
+#: src/setup.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: src/setup.php:48
+msgid "Footer Menu 2"
+msgstr ""
+
+#: src/setup.php:49
+msgid "Footer Menu 3"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Skkr Wordpress theme"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://skkr.dk"
+msgstr "https://skkr.dk"
+
+#. Description of the plugin/theme
+msgid ""
+"A minimal WordPress theme skeleton with ACF blocks. Based on the Dinero "
+"theme structure."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Robbert Vervuurt"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://robbert.dk"
+msgstr "https://robbert.dk"
+
+#~ msgid "We're sorry. This page doesn't exist."
+#~ msgstr "Vi beklager. Denne side findes ikke."
+
+#~ msgid "Branches"
+#~ msgstr "Brancher"
+
+#~ msgid "Companies"
+#~ msgstr "Virksomhedstyper"
+
+#~ msgid "Comments"
+#~ msgstr "Kommentarer"
+
+#~ msgid "Previous"
+#~ msgstr "Tilbage"
+
+#~ msgid "Next"
+#~ msgstr "Næste"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Kommentarer er lukket."
+
+#~ msgctxt "comments title"
+#~ msgid "One reply"
+#~ msgstr "En besvarelse"
+
+#, php-format
+#~ msgctxt "comments title"
+#~ msgid "%1$s reply"
+#~ msgid_plural "%1$s replies"
+#~ msgstr[0] "%1$s kommentarer"
+#~ msgstr[1] "%1$s kommentarer"
+
+#~ msgid "All"
+#~ msgstr "Alle"
+
+#~ msgid "Integrations"
+#~ msgstr "Integrationer"
+
+#~ msgid "Dictionary"
+#~ msgstr "Ordbog"
+
+#~ msgid "Pages"
+#~ msgstr "Sider"
+
+#~ msgid "Internal Guides"
+#~ msgstr "Interne Guides"
+
+#~ msgid "What are you searching for?"
+#~ msgstr "Hvad søger du efter?"
+
+#~ msgid "Please make sure your query is at least 3 characters long"
+#~ msgstr "Indtast mindst tre tegn"
+
+#~ msgid "Search on dinero.dk"
+#~ msgstr "Søg på dinero.dk"
+
+#~ msgid "Clear input"
+#~ msgstr "Ryd søgning"
+
+#~ msgid "Filter your search"
+#~ msgstr "Filtrér din søgning"
+
+#~ msgid "Close filter"
+#~ msgstr "Luk filtrering"
+
+#~ msgid "Loading..."
+#~ msgstr "Indlæser…"
+
+#~ msgid "Sorry. No results found."
+#~ msgstr "Ingen artikler fundet."
+
+#~ msgid "Popular searches"
+#~ msgstr "Mest søgte"
+
+#~ msgid "Popular searches in Support"
+#~ msgstr "Mest søgte i Support"
+
+#~ msgid "Popular searches in Functions"
+#~ msgstr "Mest søgte i Funktioner"
+
+#~ msgid "Popular searches in Integrations"
+#~ msgstr "Mest søgte i Integrationer"
+
+#~ msgid "Popular searches in Dictionary"
+#~ msgstr "Mest søgte i Ordbog"
+
+#~ msgid "Popular searches in Blog"
+#~ msgstr "Mest søgte i Blogs"
+
+#~ msgid "Popular searches in Internal Guides"
+#~ msgstr "Mest søgte Interne Guides"
+
+#~ msgid ""
+#~ "More than 50 results. Specificy your search query to see more results."
+#~ msgstr ""
+#~ "Din søgning gav flere end 50 resultater. Specificer din søgning for flere "
+#~ "resultater."
+
+#~ msgid "No articles matched your search."
+#~ msgstr "Din søgning gav ingen resultater."
+
+#~ msgid "Reset Search"
+#~ msgstr "Nulstil søgning"
+
+#~ msgid ""
+#~ "No articles matched your search. But we have found results in another "
+#~ "category."
+#~ msgstr ""
+#~ "Din søgning gav ingen resultater i denne kategori. Der findes dog "
+#~ "resultater i en anden kategori."
+
+#~ msgid "Reset Filter"
+#~ msgstr "Nulstil filtrering"
+
+#~ msgid "No articles found for the selected filter."
+#~ msgstr "Din filtrering gav ingen resultater."
+
+#~ msgid "Copy link"
+#~ msgstr "Kopier link"
+
+#~ msgid "Copied"
+#~ msgstr "Kopieret"
+
+#~ msgid "Copy"
+#~ msgstr "Kopiér"
+
+#~ msgid "Fact"
+#~ msgstr "Fakta"
+
+#~ msgid "Download template"
+#~ msgstr "Hent skabelon"
+
+#, php-format
+#~ msgid "%1$d out of %2$d finds this useful"
+#~ msgstr "%1$d ud af %2$d synes om dette tilbud"
+
+#~ msgid "Play video"
+#~ msgstr "Afspil video"
+
+#~ msgid "Internal guides categories"
+#~ msgstr "Interne Guides kategorier"
+
+#~ msgid "Your answer"
+#~ msgstr "Dit svar"
+
+#~ msgid "Enable cookies to proceed"
+#~ msgstr "Accepter cookies for at fortsætte"
+
+#~ msgid ""
+#~ "Please <button class=\"text-primary-500 underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">enable cookies</"
+#~ "button> in your browser to access and submit this form."
+#~ msgstr ""
+#~ "Du skal <button class=\"text-primary-500 underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">acceptere "
+#~ "funktionelle cookies</button> for at få adgang til denne formular."
+
+#~ msgid "Popular"
+#~ msgstr "Populær"
+
+#~ msgid "Show more"
+#~ msgstr "Vis flere"
+
+#~ msgid "Show less"
+#~ msgstr "Vis færre"
+
+#~ msgid "This package fits:"
+#~ msgstr "Denne pakke passer til:"
+
+#~ msgid "Click to read more"
+#~ msgstr "Klik for at læse mere"
+
+#~ msgid "Share results"
+#~ msgstr "Del resultat"
+
+#~ msgid "Copied to clipboard"
+#~ msgstr "Kopieret"
+
+#~ msgid "Read more"
+#~ msgstr "Læs mere"
+
+#~ msgid "Log out"
+#~ msgstr "Log ud"
+
+#~ msgid "Something went wrong"
+#~ msgstr "Noget gik galt"
+
+#~ msgid ""
+#~ "If you see this text, the Google Script couldn't be loaded. Please try "
+#~ "disabling the plugin blocking the script, or try it in another browser"
+#~ msgstr ""
+#~ "Hvis du ser denne tekst, kunne Google Scriptet ikke indlæses. Prøv "
+#~ "venligst at deaktivere plugin’et, der blokerer scriptet, eller prøv i en "
+#~ "anden browser."
+
+#~ msgid "Log in with Google"
+#~ msgstr "Log ind med Google"
+
+#~ msgid "Download Dinero App right here"
+#~ msgstr "Download Dinero-appen lige her"
+
+#~ msgid "View more testimonials"
+#~ msgstr "Se flere anmeldelser"
+
+#~ msgid "Read testimonial"
+#~ msgstr "Læs udtalelse"
+
+#~ msgid ""
+#~ "Please <button class=\"text-primary-500 underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">enable cookies</"
+#~ "button> in your browser to activate this button."
+#~ msgstr ""
+#~ "Du skal <button class=\"text-primary-500 underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">acceptere "
+#~ "funktionelle cookies</button> for at aktivere denne knap."
+
+#~ msgid "Filters"
+#~ msgstr "Filtre"
+
+#~ msgid "Reset"
+#~ msgstr "Nulstil"
+
+#~ msgid "Cities"
+#~ msgstr "Byer"
+
+#~ msgid "Show all"
+#~ msgstr "Vis alle"
+
+#~ msgid "Services"
+#~ msgstr "Ydelser"
+
+#~ msgid "Industries"
+#~ msgstr "Brancher"
+
+#~ msgid "Company types"
+#~ msgstr "Virksomhedstyper"
+
+#~ msgid "Reset all filters"
+#~ msgstr "Nulstil filtrering"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorier"
+
+#~ msgid "Approved by Dinero"
+#~ msgstr "Godkendt af Dinero"
+
+#~ msgid "Open for customers"
+#~ msgstr "Åben for kunder"
+
+#~ msgid "Works remote"
+#~ msgstr "Arbejder online"
+
+#~ msgid "Sorry. No accountants found."
+#~ msgstr "Ingen revisorer fundet."
+
+#~ msgid "No accountants matched your search."
+#~ msgstr "Din søgning gav ingen resultater."
+
+#~ msgid "stars"
+#~ msgstr "stjerner"
+
+#~ msgid "users"
+#~ msgstr "brugere"
+
+#~ msgid "Profile"
+#~ msgstr "Profil"
+
+#~ msgid "Reviews"
+#~ msgstr "Anmeldelser"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid "Employees"
+#~ msgstr "Medarbejdere"
+
+#~ msgid "About"
+#~ msgstr "Om"
+
+#~ msgid "We are specialized in"
+#~ msgstr "Vores specialer"
+
+#~ msgid "What our users say"
+#~ msgstr "Det siger brugerne"
+
+#~ msgid "Rate us"
+#~ msgstr "Skriv en anmeldelse"
+
+#~ msgid "Shall we help you?"
+#~ msgstr "Skal vi også hjælpe dig?"
+
+#~ msgid "Contact accountant"
+#~ msgstr "Kontakt revisor"
+
+#~ msgid "Show phone number"
+#~ msgstr "Vis telefonnummer"
+
+#~ msgid "Show email"
+#~ msgstr "Vis e-mail"
+
+#~ msgid "Our employees"
+#~ msgstr "Vores ansatte"
+
+#~ msgid "Employee"
+#~ msgstr "Medarbejder"
+
+#~ msgid "This partner is approved by Dinero"
+#~ msgstr "Denne revisor er godkendt af Dinero"
+
+#~ msgid "What does that mean?"
+#~ msgstr "Hvad betyder det?"
+
+#~ msgid "See user reviews"
+#~ msgstr "Se brugernes anmeldelser"
+
+#~ msgid "Back to blog"
+#~ msgstr "Tilbage til bloggen"
+
+#~ msgid "Back to"
+#~ msgstr "Tilbage til"
+
+#~ msgid "Back to How To"
+#~ msgstr "Tilbage til How To"
+
+#~ msgid "Published"
+#~ msgstr "Udgivet"
+
+#~ msgid "Written by"
+#~ msgstr "Skrevet af"
+
+#~ msgid "Reading time"
+#~ msgstr "Læsetid"
+
+#~ msgid "On "
+#~ msgstr "d. "
+
+#~ msgid "Last modified "
+#~ msgstr "Sidst opdateret "
+
+#~ msgid "Back to dictionary"
+#~ msgstr "Tilbage til ordbog"
+
+#~ msgid "Back to "
+#~ msgstr "Tilbage til "
+
+#~ msgid "Back to support"
+#~ msgstr "Tilbage til support"
+
+#~ msgid "Back to legislations"
+#~ msgstr "Tilbage til lovsamlinger"
+
+#~ msgid "Related words"
+#~ msgstr "Relaterede ord"
+
+#~ msgid "Company:"
+#~ msgstr "Firma:"
+
+#~ msgid "Title:"
+#~ msgstr "Titel:"
+
+#~ msgid "Web:"
+#~ msgstr "Web:"
+
+#~ msgid "Close menu"
+#~ msgstr "Luk menu"
+
+#~ msgid "Sign in"
+#~ msgstr "Log ind"
+
+#~ msgid "Search"
+#~ msgstr "Søg"
+
+#~ msgid "Home"
+#~ msgstr "Hjem"
+
+#~ msgid "Close search"
+#~ msgstr "Luk søgning"
+
+#~ msgid "Back to Find Accountant"
+#~ msgstr "Tilbage til Find Revisor"
+
+#~ msgid "Dinero users"
+#~ msgstr "Dinerobrugere"
+
+#~ msgid "Integrationer til"
+#~ msgstr "Integrationer til"
+
+#, php-format
+#~ msgid "View all posts in %s"
+#~ msgstr "Vis alle indlæg i %s"
+
+#~ msgid "View the dictionary"
+#~ msgstr "Vis hele ordbogen"
+
+#~ msgid "Search all of Dinero..."
+#~ msgstr "Søg i hele Dinero..."
+
+#~ msgctxt "id"
+#~ msgid "searchform"
+#~ msgstr "searchform"
+
+#~ msgctxt "label"
+#~ msgid "Search..."
+#~ msgstr "Søg..."
+
+#~ msgid "Watch the video"
+#~ msgstr "Se hele videoen"
+
+#~ msgid ""
+#~ "Please <button class=\"text-white underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">enable cookies</"
+#~ "button> in your browser to activate this button."
+#~ msgstr ""
+#~ "Du skal <button class=\"text-white underline\" aria-label=\"renew-"
+#~ "consent\" onclick=\"javascript:CookieConsent.renew();\">acceptere "
+#~ "funktionelle cookies</button> for at aktivere denne knap."
+
+#~ msgid "Continue with"
+#~ msgstr "Opret dig med"
+
+#~ msgid "Do you already have an account?"
+#~ msgstr "Har du allerede en konto?"
+
+#~ msgid "Table of contents"
+#~ msgstr "Indholdsfortegnelse"
+
+#~ msgid "Back to top"
+#~ msgstr "Tilbage til top"
+
+#~ msgid "Search in integrations"
+#~ msgstr "Søg efter integrationer"
+
+#~ msgid "Search in Internal Guides"
+#~ msgstr "Søg i interne guides"
+
+#, php-format
+#~ msgid "Integrate with %s now"
+#~ msgstr "Integrerer med %s nu"
+
+#, fuzzy
+#~| msgid "Go to integration website"
+#~ msgid "Start integrationen"
+#~ msgstr "Gå til integrationswebsite"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Accountant Regions"
+#~ msgstr "Revisorer Skabelon"
+
+#~ msgid "Internal guides archive"
+#~ msgstr "Interne guides arkiv"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Accountant Map"
+#~ msgstr "Revisorer Skabelon"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Accountant List"
+#~ msgstr "Revisorer Skabelon"
+
+#, fuzzy
+#~| msgid "Close filter"
+#~ msgid "Lottie file"
+#~ msgstr "Luk filtrering"
+
+#, fuzzy
+#~| msgid "Download template"
+#~ msgid "Invoice templates"
+#~ msgstr "Hent skabelon"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Integration Search"
+#~ msgstr "Integrationer fra A-Z"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Integration List"
+#~ msgstr "Integrationer fra A-Z"
+
+#~ msgid "Enter your information"
+#~ msgstr "Indtast dine oplysninger"
+
+#~ msgctxt "input id"
+#~ msgid "name"
+#~ msgstr "Navn"
+
+#~ msgctxt "input label"
+#~ msgid "Name"
+#~ msgstr "Navn"
+
+#~ msgctxt "input placeholder"
+#~ msgid "Your name"
+#~ msgstr "Dit navn"
+
+#~ msgctxt "input id"
+#~ msgid "email"
+#~ msgstr "email"
+
+#, fuzzy
+#~| msgctxt "input id"
+#~| msgid "email"
+#~ msgctxt "input label"
+#~ msgid "E-mail"
+#~ msgstr "email"
+
+#~ msgctxt "input placeholder"
+#~ msgid "Your email"
+#~ msgstr "Din e-mail"
+
+#, fuzzy
+#~| msgid "Rating"
+#~ msgctxt "input id"
+#~ msgid "marketing"
+#~ msgstr "Bedømmelse"
+
+#~ msgctxt "input id"
+#~ msgid "terms"
+#~ msgstr "betingelser"
+
+#~ msgid "Confirm your account"
+#~ msgstr "Bekræft konto"
+
+#~ msgid "Password protected"
+#~ msgstr "Beskyttet af adgangskode"
+
+#~ msgid "To view this protected post, enter the password below:"
+#~ msgstr ""
+#~ "Indlægget er adgangskodebeskyttet. For at se det, indtast adgangskoden "
+#~ "herunder:"
+
+#~ msgid "Password:"
+#~ msgstr "Adgangskode:"
+
+#~ msgid "Submit"
+#~ msgstr "Send"
+
+#~ msgid "Post navigation"
+#~ msgstr "Indlægs navigation"
+
+#~ msgid "Share this article"
+#~ msgstr "Del denne artikel"
+
+#~ msgid "Share on"
+#~ msgstr "Del på"
+
+#, php-format
+#~ msgid "Category %s contains %d articles"
+#~ msgstr "Kategorien %s indeholder %d artikler"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Find en revisor udenfor Danmark"
+#~ msgstr "Integrationer fra A-Z"
+
+#~ msgid "link to "
+#~ msgstr "Link til "
+
+#~ msgctxt "template"
+#~ msgid "Deduction Guide Template"
+#~ msgstr "Fradragsguide Skabelon"
+
+#~ msgid "Choose your branch"
+#~ msgstr "Vælg din branche"
+
+#~ msgid "Sorry. No integrations found."
+#~ msgstr "Ingen integrationer fundet."
+
+#~ msgid "No integrations matched your search."
+#~ msgstr "Din søgning gav ingen resultater."
+
+#~ msgid "Show categories"
+#~ msgstr "Vis kategorier"
+
+#~ msgid "Hide categories"
+#~ msgstr "Skjul kategorier"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Deduction Guide Template"
+#~ msgctxt "template"
+#~ msgid "Standard Wide Template"
+#~ msgstr "Fradragsguide Skabelon"
+
+#, fuzzy
+#~| msgid "Download Dinero App"
+#~ msgid "Visma Dinero ApS"
+#~ msgstr "Download Dinero App"
+
+#~ msgid ""
+#~ "A custom WordPress theme developed by <a href=\"https://"
+#~ "mikkeltschentscher.dk\">Mikkel Tschentscher</a> for Dinero Regnskab. If "
+#~ "you are in need of assistance, please contact Mikkel on <a "
+#~ "href=\"tel:004522513179\">+45 22 5131 79</a> or <a "
+#~ "href=\"mailto:hello@mikkeltschentscher.dk\">hello@mikkeltschentscher.dk</"
+#~ "a>.  <a href=\"https://github.com/DineroRegnskab/dinero-dk\">Contribute "
+#~ "on GitHub</a>"
+#~ msgstr ""
+#~ "Et brugerdefineret WordPress tema udviklet af <a href=“https://"
+#~ "mikkeltschentscher.dk”>Mikkel Tschentscher</a>. Hvis du har brug for "
+#~ "hjælp, kan du kontakte Mikkel på <a href=“tel:004522513179”> +45 22 5131 "
+#~ "79</a> eller <a "
+#~ "href=“mailto:hello@mikkeltschentscher.dk”>hello@mikkeltschentscher.dk</"
+#~ "a> . <a href=“https://github.com/mikkeltschentscher/dinero.dk”>Bidrag på "
+#~ "GitHub</a>"
+
+#~ msgid "Mikkel Tschentscher"
+#~ msgstr "Mikkel Tschentscher"
+
+#~ msgid "https://mikkeltschentscher.dk"
+#~ msgstr "https://mikkeltschentscher.dk"
+
+#, fuzzy
+#~| msgid "Dictionary"
+#~ msgid "Dictionary archive"
+#~ msgstr "Ordbog"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Integrations template"
+#~ msgstr "Integrationer fra A-Z"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Deduction Guide Template"
+#~ msgid "Standard Wide Template"
+#~ msgstr "Fradragsguide Skabelon"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Deduction Guide Template"
+#~ msgid "Deduction Guide Template"
+#~ msgstr "Fradragsguide Skabelon"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Find revisor template"
+#~ msgstr "Integrationer fra A-Z"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Components Template"
+#~ msgstr "Revisorer Skabelon"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Accountants Endpoint Template"
+#~ msgstr "Revisorer Skabelon"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "White background template"
+#~ msgstr "Integrationer fra A-Z"
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid "About us"
+#~ msgstr "Om os"
+
+#, fuzzy
+#~| msgctxt "template"
+#~| msgid "Accountants Template"
+#~ msgid "Accountant Cities"
+#~ msgstr "Revisorer Skabelon"
+
+#, fuzzy
+#~| msgid "Integrations from A-Z"
+#~ msgid "Integration Groups"
+#~ msgstr "Integrationer fra A-Z"
+
+#~ msgctxt "input label"
+#~ msgid "Your name"
+#~ msgstr "Dit navn"
+
+#~ msgctxt "input label"
+#~ msgid "Your email"
+#~ msgstr "Din email"
+
+#~ msgid "testing1234"
+#~ msgstr "hej"
+
+#~ msgid "Sign in2"
+#~ msgstr "Log ind"
+
+#~ msgid "Your result:"
+#~ msgstr "Dit resultat:"
+
+#~ msgid "Close"
+#~ msgstr "Luk"
+
+#~ msgctxt "input id"
+#~ msgid "password"
+#~ msgstr "adgangskode"
+
+#~ msgctxt "id"
+#~ msgid "password"
+#~ msgstr "adgangskode"
+
+#~ msgctxt "input placeholder"
+#~ msgid "Choose password"
+#~ msgstr "Vælg adgangskode"
+
+#, php-format
+#~ msgid "Your search for %s gave %s results"
+#~ msgstr "Din søgning efter %s gav %s resultater"
+
+#, fuzzy, php-format
+#~| msgid "Your search for %s gave %s results."
+#~ msgid "Din søgning efter %s gav %s resultater."
+#~ msgstr "Din søgning efter %s gav %s resultater."
+
+#, fuzzy, php-format
+#~| msgid "Your search for %s gave %d result."
+#~| msgid_plural "Your search for %s gave %d results."
+#~ msgid "Din søgning efter %s gav %d resultat."
+#~ msgid_plural "Din søgning efter %s gav %d resultater."
+#~ msgstr[0] "Din søgning efter %s gav %d resultat."
+#~ msgstr[1] "Din søgning efter %s gav %d resultater."
+
+#, fuzzy
+#~| msgctxt "time under 55 seconds"
+#~| msgid "nearly a minute."
+#~ msgctxt "time under 120 seconds"
+#~ msgid "under 2 minutter"
+#~ msgstr "næsten et minut"
+
+#, php-format
+#~ msgid "%d minute"
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d minut"
+#~ msgstr[1] "%d minutter"
+
+#~ msgid "back to frontpage"
+#~ msgstr "tilbage til forsiden"
+
+#~ msgid "404 error"
+#~ msgstr "Fejl 404"
+
+#~ msgid "Skip to the main content"
+#~ msgstr "Spring til indholdet"
+
+#~ msgid "placeholder"
+#~ msgstr "pladsholder"
+
+#~ msgid "Apple Store Logo"
+#~ msgstr "Google Play Store Logo"
+
+#~ msgid "Google Play Logo"
+#~ msgstr "Google Play Logo"
+
+#~ msgid "Modified: "
+#~ msgstr "Sidst opdateret: "
+
+#~ msgid "For the social"
+#~ msgstr "For de sociale"
+
+#~ msgid "Toggle navigation"
+#~ msgstr "Åben navigation"
+
+#~ msgctxt "Privacy Policy Text"
+#~ msgid "We use cookies."
+#~ msgstr "Vi bruger cookies."
+
+#~ msgid "Accept and close"
+#~ msgstr "Acceptér og luk boks"
+
+#, php-format
+#~ msgid ""
+#~ "We use cookies to improve your user experience at dinero.dk. By using the "
+#~ "site, you accept our use of cookies. You can disable statistics cookies "
+#~ "by %1$s."
+#~ msgstr ""
+#~ "Vi bruger cookies til at forbedre din brugeroplevelse på dinero.dk. Når "
+#~ "du bruger siden, accepterer du vores brug af cookies. Du kan sige nej tak "
+#~ "til statistikcookies ved at %1$s."
+
+#~ msgid "clicking here"
+#~ msgstr "klikke her"
+
+#~ msgctxt "placeholder"
+#~ msgid "Search..."
+#~ msgstr "Søg..."
+
+#~ msgid "dinero-dk"
+#~ msgstr "dinero-dk"
+
+#~ msgctxt "input placeholder"
+#~ msgid "Choose password (min. 8 characters)"
+#~ msgstr "Vælg adgangskode (min. 8 tegn)"
+
+#~ msgctxt "Privacy Policy Text"
+#~ msgid ""
+#~ "We use cookies for statistical analysis, improving the friendliness and "
+#~ "usability of our website, tailoring content to your interests and "
+#~ "engaging with social media. By visiting our website, you consent to our "
+#~ "and third party use of cookies."
+#~ msgstr ""
+#~ "Vi bruger cookies til at forbedre brugervenligheden og funktionaliteten "
+#~ "på dinero.dk. Når du benytter sitet, samtykker du til vores anvendelse af "
+#~ "cookies."
+
+#~ msgid "Accept"
+#~ msgstr "Acceptér"
+
+#~ msgctxt "input label"
+#~ msgid "I accept the"
+#~ msgstr "Jeg accepterer"
+
+#~ msgctxt "input label"
+#~ msgid "Terms & Conditions"
+#~ msgstr "betingelserne"
+
+#~ msgctxt "time under 30 seconds"
+#~ msgid "hardly any time at all."
+#~ msgstr "et halvt minut"
+
+#~ msgctxt "time under 50 seconds"
+#~ msgid "less than a minute."
+#~ msgstr "mindre end et minut."
+
+#~ msgctxt "time under 65 seconds"
+#~ msgid "one minute dead."
+#~ msgstr "et minut"
+
+#~ msgctxt "time under 85 seconds"
+#~ msgid "a minute and a bit."
+#~ msgstr "lidt over et minut"
+
+#~ msgctxt "time under 95 seconds"
+#~ msgid "roughly a minute and a half."
+#~ msgstr "halvandet minut"
+
+#~ msgctxt "time under 120 seconds"
+#~ msgid "less than two minutes."
+#~ msgstr "Mindre end 2 minutter"
+
+#~ msgid "just shy of %d minute"
+#~ msgid_plural "just shy of %d minutes"
+#~ msgstr[0] "liige under %d minut"
+#~ msgstr[1] "lige under %d minutter"
+
+#~ msgid "a little over %d minute"
+#~ msgid_plural "a little over %d minutes"
+#~ msgstr[0] "lige over %d minut"
+#~ msgstr[1] "lige over %d minutter"
+
+#~ msgid "about %d minute"
+#~ msgid_plural "about %d minutes"
+#~ msgstr[0] "lige over %d minutter"
+#~ msgstr[1] ""
+
+#~ msgid "%d and a half minute"
+#~ msgid_plural "%d and a half minutes"
+#~ msgstr[0] "%d og et halvt minut"
+#~ msgstr[1] "%d og et halvt minutter"
+
+#~ msgid "zero"
+#~ msgstr "nul"
+
+#~ msgid "one"
+#~ msgstr "en"
+
+#~ msgid "two"
+#~ msgstr "To"
+
+#~ msgid "three"
+#~ msgstr "tre"
+
+#~ msgid "four"
+#~ msgstr "fire"
+
+#~ msgid "five"
+#~ msgstr "fem"
+
+#~ msgid "six"
+#~ msgstr "seks"
+
+#~ msgid "seven"
+#~ msgstr "syv"
+
+#~ msgid "eight"
+#~ msgstr "otte"
+
+#~ msgid "nine"
+#~ msgstr "ni"
+
+#~ msgid "Back  to overview"
+#~ msgstr "Tilbage til oversigten"
+
+#~ msgid "back to overview"
+#~ msgstr "tilbage til oversigten"
+
+#~ msgid "Back to overview"
+#~ msgstr "Tilbage til oversigten"
+
+#~ msgid "Back"
+#~ msgstr "Tilbage"
+
+#~ msgid "back"
+#~ msgstr "tilbage"
+
+#~ msgid "back to testimonials"
+#~ msgstr "tilbage til brugerudtalelser"
+
+#~ msgid "ten"
+#~ msgstr "ti"
+
+#~ msgid "eleven"
+#~ msgstr "elleve"
+
+#~ msgid "twelve"
+#~ msgstr "tolv"
+
+#~ msgid "thirteen"
+#~ msgstr "tretten"
+
+#~ msgid "fourteen"
+#~ msgstr "fjorten"
+
+#~ msgid "fifteen"
+#~ msgstr "femten"
+
+#~ msgid "sixteen"
+#~ msgstr "seksten"
+
+#~ msgid "Your search for %s gave a single result."
+#~ msgstr "Din søgning efter %s gav ét resultat."
+
+#~ msgid ""
+#~ "Create <span class=\"text-uppercase font-weight-bold\">free </span> "
+#~ "account"
+#~ msgstr ""
+#~ "Opret <span class=\"text-uppercase font-weight-bold\">gratis</span> konto"
+
+#~ msgid "Trending right now"
+#~ msgstr "Trender lige nu"
+
+#~ msgid ""
+#~ "Create <span class=\"text-uppercase font-weight-bold\">free</span> account"
+#~ msgstr ""
+#~ "Opret <span class=\"text-uppercase font-weight-bold\">gratis</span> konto"
+
+#~ msgid "Integrate with Dinero now"
+#~ msgstr "Integrer med Dinero nu"
+
+#~ msgid "Fits these company types"
+#~ msgstr "Passer til virksomhedstypen"
+
+#~ msgid ""
+#~ "Create <span class=\"text-uppercase font-weight-bold d-mhidden d-lg-"
+#~ "inline-block\">free</span> account"
+#~ msgstr ""
+#~ "Opret <span class=\"text-uppercase font-weight-bold d-mhidden d-lg-inline-"
+#~ "block\">gratis</span> konto"
+
+#~ msgid ""
+#~ "Create <span class=\"text-uppercase font-weight-bold\">free </span> "
+#~ "account – right now"
+#~ msgstr ""
+#~ "Opret <span class=\"text-uppercase font-weight-bold\">gratis</span> konto "
+#~ "– lige nu"
+
+#~ msgid "Last modified: "
+#~ msgstr "Sidst opdateret: "
+
+#~ msgctxt "button"
+#~ msgid "Get your voucher"
+#~ msgstr "Få din kupon"
+
+#~ msgid "Join the Conversation"
+#~ msgstr "Deltag i samtalen"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Efterlad en kommentar"
+
+#~ msgctxt "comments title"
+#~ msgid "One reply on &ldquo;%s&rdquo;"
+#~ msgstr "En kommentar til &ldquo;%s&rdquo;"
+
+#~ msgctxt "comments title"
+#~ msgid "%1$s reply on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s replies on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "%1$s svar til &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s svar til &ldquo;%2$s&rdquo;"
+
+#~ msgid "<"
+#~ msgstr "<"
+
+#~ msgid ">"
+#~ msgstr ">"
+
+#~ msgid "We found %s search results"
+#~ msgstr "Vi fandt %s søgeresultater"
+
+#~ msgid "Follow Dinero on Facebook"
+#~ msgstr "Følg Dinero på Facebook"
+
+#~ msgid "Follow Dinero on Instagram"
+#~ msgstr "Følg Dinero på Instagram"
+
+#~ msgid "Follow Dinero on Linkedin"
+#~ msgstr "Følg Dinero på LinkedIn"
+
+#~ msgid "Follow Dinero on Twitter"
+#~ msgstr "Følg Dinero på Twitter"
+
+#~ msgid "Download Dinero App on the Apple Store"
+#~ msgstr "Download Dinero App i Apple Store"
+
+#~ msgid "Download Dinero App on the Google Play Store"
+#~ msgstr "Download Dinero App i Google Play butikken"

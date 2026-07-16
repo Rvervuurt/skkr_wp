@@ -40,32 +40,15 @@ if (!function_exists('skkr_enqueue_scripts')) {
             null
         );
 
-        // Enqueue vendor scripts (extracted by Laravel Mix)
-        wp_enqueue_script(
-            'skkr-vendor',
-            skkr_mix('/dist/scripts/vendor.js'),
-            [],
-            null,
-            true
-        );
-
-        // Enqueue manifest (required for code splitting)
-        wp_enqueue_script(
-            'skkr-manifest',
-            skkr_mix('/dist/scripts/manifest.js'),
-            [],
-            null,
-            true
-        );
-
-        // Enqueue main script
+        // Enqueue main script (standalone bundle with Alpine.js included)
         wp_enqueue_script(
             'skkr-scripts',
             skkr_mix('/dist/scripts/main.js'),
-            ['skkr-vendor', 'skkr-manifest'],
+            [],
             null,
             true
         );
+
 
         // Localize script with WordPress data
         wp_localize_script('skkr-scripts', 'skkrData', [

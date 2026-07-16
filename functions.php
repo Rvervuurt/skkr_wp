@@ -21,7 +21,7 @@ add_action('after_switch_theme', function () {
 
 // Load text domain
 function skkr_load_theme_textdomain() {
-    load_theme_textdomain('wp-theme-skkr', get_template_directory() . '/languages');
+    load_theme_textdomain('skkr', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'skkr_load_theme_textdomain');
 
@@ -30,11 +30,14 @@ $skkr_includes = [
     'src/setup.php',
     'src/acf-gutenberg-blocks.php',
     'src/enqueue-scripts.php',
+    'src/footer-menu-walker.php',
+    'src/modal-slides-cpt.php',
 ];
 
 array_walk($skkr_includes, function ($file) {
     if (!locate_template($file, true, true)) {
-        trigger_error(sprintf(__('Error locating %s for inclusion', 'wp-theme-skkr'), $file), E_USER_ERROR);
+        /* translators: %s: file path */
+        trigger_error(sprintf(__('Error locating %s for inclusion', 'skkr'), $file), E_USER_ERROR);
     }
 });
 
@@ -44,3 +47,57 @@ function skkr_body_classes($classes) {
     return $classes;
 }
 add_filter('body_class', 'skkr_body_classes');
+
+if( !function_exists( 'skkr_allowed_block_types' ) ) {
+ 
+	function dinero_allowed_block_types( $allowed_blocks, $editor_context ) {
+
+        $allowed_blocks = array(
+            //CORE
+            // 'core/audio',
+            // 'core/button', // Erstat med ACF buttons
+            // 'core/buttons', // Erstat med ACF buttons
+            // 'core/classic-editor',
+            // 'core/column',
+            // 'core/columns',
+            'core/embed', // Kan ikke altid erstattes med oEmbed
+            // 'core/gallery',
+            // 'core/group',
+            'core/heading',
+            // 'core/html',
+            'core/image',
+            'core/list',
+            'core/list-item',
+            // 'core/more',
+            // 'core/navigation-link',
+            // 'core/navigation-submenu',
+            'core/paragraph',
+            // 'core/pullquote', // Erstat med blockquote
+            // 'core/quote', // Erstat med blockquote
+            // 'core/search',
+            // 'core/separator',
+            // 'core/shortcode',
+            // 'core/spacer',
+            // 'core/table',
+            'core/video',
+            
+            'acf/hero',
+            'acf/text-media',
+            'acf/oneliner',
+            'acf/text',
+        );
+		
+        // $acf_blocks = acf_get_block_types();
+        // $allowed_blocks = array();
+        // foreach ($acf_blocks as $block) {			
+        //     $allowed_blocks[] = $block['name'];
+        // }
+
+		return $allowed_blocks;
+		
+	
+	}
+
+	add_filter( 'allowed_block_types_all', 'dinero_allowed_block_types', 25, 2 );
+
+}

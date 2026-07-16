@@ -9,12 +9,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <header class="entry-header">
-        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-    </header>
-
-    <div class="entry-content">
+    <div class="entry-content sk-flex sk-flex-col sk-gap-8 lg:sk-gap-12">
         <?php the_content(); ?>
     </div>
 
