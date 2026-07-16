@@ -1,19 +1,50 @@
 <!doctype html>
 <html>
     <head>
-        <meta name="color-scheme" content="light dark">
+        <meta name="color-scheme" content="light dark" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="./dist/styles/main.css" rel="stylesheet" />
-        <style>html, body { background: transparent; }</style>
-        <!-- Single standalone Alpine.js bundle -->
-        <script defer src="./dist/scripts/skkr_alpine.js"></script>
+        <script>
+            // Local (*.test) uses the gitignored dev/ build written by
+            // `npm run watch`; skkr.dk uses the committed dist/ build.
+            (function () {
+                var base = /\.test$/.test(location.hostname)
+                    ? "./dev/"
+                    : "./dist/";
+
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = base + "styles/main.css";
+                document.head.appendChild(link);
+
+                // The Alpine bundle calls Alpine.start() as soon as it runs,
+                // so don't inject it before the DOM has been parsed.
+                function loadScript() {
+                    var script = document.createElement("script");
+                    script.src = base + "scripts/skkr_alpine.js";
+                    document.head.appendChild(script);
+                }
+
+                if (document.readyState === "loading") {
+                    document.addEventListener("DOMContentLoaded", loadScript);
+                } else {
+                    loadScript();
+                }
+            })();
+        </script>
+        <style>
+            html,
+            body {
+                background: transparent;
+            }
+        </style>
     </head>
     <body class="sk-body modal">
         <div
             class="sk-relative sk-flex sk-h-screen sk-max-h-[520px] sk-w-full sk-max-w-xl sk-flex-wrap sk-justify-center sk-overflow-hidden sk-rounded-2xl sk-bg-primary-50 dark:sk-bg-gray-900"
             x-data="modalSlides()"
             x-init="init()"
+            @click="handleContentClick($event)"
         >
             <header
                 class="sk-relative sk-flex sk-w-full sk-items-center sk-justify-center sk-border-b sk-border-primary-200 sk-px-6 sk-py-4 dark:sk-border-gray-700 dark:sk-bg-gray-800/80"
@@ -22,7 +53,7 @@
                     x-show="currentSlide && currentSlide.parent"
                     x-transition
                     @click="goToParent()"
-                    class="sk-absolute sk-left-4 sk-flex sk-items-center sk-gap-2 sk-rounded-md sk-px-3 sk-py-2 sk-text-primary-600 sk-transition-colors hover:sk-bg-primary-100 dark:sk-text-primary-400 dark:hover:sk-bg-gray-700"
+                    class="sk-absolute sk-left-4 sk-flex sk-items-center sk-gap-2 sk-rounded-md sk-px-3 sk-py-2 sk-text-primary-600 sk-transition-colors hover:sk-bg-primary-100 dark:hover:sk-bg-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -38,15 +69,15 @@
                             d="M15.75 19.5 8.25 12l7.5-7.5"
                         />
                     </svg>
-                    <span class="sk-text-sm">Tilbage</span>
+                    <span class="sk-text-base">Tilbage</span>
                 </button>
                 <a
                     href="https://skkr.dk"
-                    class="sk- sk-flex sk-items-center sk-gap-2 sk-text-primary-600 dark:sk-text-primary-400"
+                    class="sk-flex sk-items-center sk-gap-2 sk-text-primary-600"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="-sk-mt-1 sk-h-4 sk-w-4"
+                        class="sk-h-6 sk-w-6"
                         viewBox="0 0 64 64"
                         fill="none"
                     >
@@ -57,7 +88,9 @@
                             clip-rule="evenodd"
                         ></path>
                     </svg>
-                    <span class="sk-font-serif sk-text-sm">Skkr</span>
+                    <span class="sk-font-serif sk-text-lg sk-font-bold"
+                        >Skkr</span
+                    >
                 </a>
             </header>
 
@@ -181,7 +214,7 @@
                         x-if="currentSlide?.acf?.modal_buttons && currentSlide.acf.modal_buttons.length > 0"
                     >
                         <div
-                            class="sk-flex sk-flex-col sk-gap-4"
+                            class="sk-flex sk-grid-cols-2 sk-flex-col sk-gap-4"
                             :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-grid sk-grid-cols-2' : ''"
                         >
                             <template
@@ -191,16 +224,16 @@
                                 <a
                                     :href="safeUrl(button.button_link?.url)"
                                     :target="button.button_link?.target || '_self'"
-                                    class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-p-6 sk-shadow-lg sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl active:sk-scale-[0.98]"
+                                    class="sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-border sk-bg-white sk-p-4 sk-transition-all sk-duration-300 hover:sk-scale-[1.02] active:sk-scale-[0.98] dark:sk-bg-gray-800"
                                     :class="button.button_style === 'danger' ?
-                                        'sk-from-red-500 sk-to-red-700 sk-shadow-red-600/30 hover:sk-shadow-red-600/40' :
-                                        'sk-from-primary-500 sk-to-primary-700 sk-shadow-primary-600/30 hover:sk-shadow-xl hover:sk-shadow-primary-600/40 dark:sk-from-primary-700 dark:sk-to-primary-900'"
+                                        'sk-border-red-200 dark:sk-border-red-900/60' :
+                                        'sk-border-gray-200 dark:sk-border-gray-700/60'"
                                 >
                                     <!-- Optional SVG Icon -->
                                     <div
                                         x-show="button.button_optional_svg"
-                                        class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-lg sk-bg-white/20 sk-backdrop-blur-sm sk-transition-transform group-hover:sk-rotate-3"
-                                        :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-h-10 sk-w-10' : ''"
+                                        class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-xl sk-text-white"
+                                        :class="(button.button_style === 'danger' ? 'sk-bg-red-600' : 'sk-bg-primary-600') + (currentSlide.acf.modal_buttons.length === 2 ? ' sk-h-10 sk-w-10' : '')"
                                     >
                                         <div
                                             class="sk-flex sk-items-center sk-text-white"
@@ -210,21 +243,38 @@
 
                                     <!-- Button content -->
                                     <div
-                                        class="sk-flex sk-flex-col sk-gap-1 sk-text-white"
+                                        class="sk-flex sk-flex-col sk-gap-1"
                                         :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-items-center sk-text-center' : 'sk-text-left'"
                                     >
                                         <p
-                                            class="sk-font-bold"
+                                            class="sk-font-bold sk-text-gray-900 dark:sk-text-white"
                                             :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-text-sm' : 'sk-text-lg'"
                                             x-text="button.button_link?.title || 'Button'"
                                         ></p>
                                         <p
                                             x-show="button.button_description"
-                                            class="sk-text-white/90"
+                                            class="sk-text-gray-600 dark:sk-text-gray-400"
                                             :class="currentSlide.acf.modal_buttons.length === 2 ? 'sk-text-center sk-text-sm' : 'sk-text-sm'"
                                             x-text="button.button_description"
                                         ></p>
                                     </div>
+
+                                    <!-- Chevron (full-width cards only) -->
+                                    <svg
+                                        x-show="currentSlide.acf.modal_buttons.length !== 2"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="2"
+                                        stroke="currentColor"
+                                        class="sk-ml-auto sk-h-5 sk-w-5 sk-flex-shrink-0 sk-text-gray-400 dark:sk-text-gray-500"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                        />
+                                    </svg>
                                 </a>
                             </template>
                         </div>
@@ -245,11 +295,11 @@
                                 <div
                                     class="sk-flex sk-flex-col sk-gap-3 sk-rounded-xl sk-border sk-border-primary-200 sk-bg-primary-50/50 sk-p-5 sk-shadow-sm dark:sk-border-primary-800 dark:sk-bg-primary-950/30"
                                 >
-                                    <h3
+                                    <h4
                                         x-show="contact.contact_title"
-                                        class="sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
+                                        class="!sk-text-lg sk-font-bold sk-text-primary-900 dark:sk-text-gray-100"
                                         x-text="contact.contact_title"
-                                    ></h3>
+                                    ></h4>
                                     <div class="sk-flex sk-flex-col sk-gap-2">
                                         <a
                                             x-show="contact.contact_link?.url"
@@ -273,22 +323,22 @@
                     <!-- Child navigation buttons (uses parent_* fields) -->
                     <div
                         x-show="childSlides.length > 0"
-                        class="sk-flex sk-flex-col sk-gap-4"
-                        :class="childSlides.length === 2 ? 'sk-grid sk-grid-cols-2' : ''"
+                        class="sk-grid sk-gap-4"
+                        :class="childSlides.length >= 2 ? 'sk-grid sk-grid-cols-2' : ''"
                     >
                         <template x-for="child in childSlides" :key="child.id">
                             <button
                                 @click="goToSlide(child.id)"
-                                class="sk-group sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-bg-gradient-to-br sk-p-6 sk-shadow-lg sk-transition-all sk-duration-300 hover:sk-scale-[1.02] hover:sk-shadow-xl active:sk-scale-[0.98]"
+                                class="sk-flex sk-items-center sk-gap-4 sk-rounded-xl sk-border sk-bg-white sk-p-4 sk-transition-all sk-duration-300 hover:sk-scale-[1.02] active:sk-scale-[0.98] dark:sk-bg-gray-800"
                                 :class="child.acf?.modal_is_emergency ?
-                                    'sk-from-red-500 sk-to-red-700 sk-shadow-red-600/30 hover:sk-shadow-red-600/40' :
-                                    'sk-from-primary-500 sk-to-primary-700 sk-shadow-primary-600/30 hover:sk-shadow-primary-600/40 dark:sk-from-primary-700 dark:sk-to-primary-900'"
+                                    'sk-border-red-200 dark:sk-border-red-900/60' :
+                                    'sk-border-gray-200 dark:sk-border-gray-700/60'"
                             >
                                 <!-- Icon from parent_button_svg -->
                                 <div
                                     x-show="child.acf?.parent_button_svg"
-                                    class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-lg sk-bg-white/20 sk-backdrop-blur-sm sk-transition-transform group-hover:sk-rotate-3"
-                                    :class="childSlides.length === 2 ? 'sk-h-10 sk-w-10' : ''"
+                                    class="sk-flex sk-h-12 sk-w-12 sk-flex-shrink-0 sk-items-center sk-justify-center sk-rounded-xl sk-text-white"
+                                    :class="(child.acf?.modal_is_emergency ? 'sk-bg-red-600' : 'sk-bg-primary-600') + (childSlides.length === 2 ? ' sk-h-10 sk-w-10' : '')"
                                 >
                                     <div
                                         class="sk-flex sk-items-center sk-justify-center sk-text-white"
@@ -298,20 +348,37 @@
 
                                 <!-- Button content using parent_* fields -->
                                 <div
-                                    class="sk-flex sk-flex-col sk-gap-1 sk-text-left sk-text-white"
+                                    class="sk-flex sk-flex-col sk-gap-1 sk-text-left"
                                 >
                                     <p
-                                        class="sk-font-bold"
+                                        class="sk-font-bold sk-text-gray-900 dark:sk-text-white"
                                         :class="childSlides.length === 2 ? 'sk-text-sm' : 'sk-text-lg'"
                                         x-text="child.acf?.parent_button_title || child.acf?.modal_title || child.title?.rendered"
                                     ></p>
                                     <p
                                         x-show="child.acf?.parent_button_subtitle"
-                                        class="sk-text-white/90"
+                                        class="sk-text-gray-600 dark:sk-text-gray-400"
                                         :class="childSlides.length === 2 ? 'sk-text-sm' : 'sk-text-sm'"
                                         x-text="child.acf?.parent_button_subtitle"
                                     ></p>
                                 </div>
+
+                                <!-- Chevron (full-width cards only) -->
+                                <svg
+                                    x-show="childSlides.length < 2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    class="sk-ml-auto sk-h-5 sk-w-5 sk-flex-shrink-0 sk-text-gray-400 dark:sk-text-gray-500"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                    />
+                                </svg>
                             </button>
                         </template>
                     </div>
@@ -387,6 +454,39 @@
 
                     goToSlide(slideId) {
                         this.currentSlideId = slideId;
+                    },
+
+                    // Button links of the form "#slide:some-slug" navigate to
+                    // that slide inside the widget instead of opening a URL.
+                    slideIdFromUrl(url) {
+                        if (!url || !url.startsWith("#slide:")) return null;
+                        const slug = url.slice("#slide:".length);
+                        const slide = this.slides.find(
+                            (s) => s.slug === slug,
+                        );
+                        if (!slide) {
+                            console.warn(
+                                `Skkr: no modal slide with slug "${slug}"`,
+                            );
+                            return null;
+                        }
+                        return slide.id;
+                    },
+
+                    // Delegated from the widget root so "#slide:" links work
+                    // anywhere: ACF buttons and links inside x-html content.
+                    handleContentClick(event) {
+                        const link = event.target.closest(
+                            'a[href^="#slide:"]',
+                        );
+                        if (!link) return;
+                        event.preventDefault();
+                        const slideId = this.slideIdFromUrl(
+                            link.getAttribute("href"),
+                        );
+                        if (slideId) {
+                            this.goToSlide(slideId);
+                        }
                     },
 
                     goToParent() {
