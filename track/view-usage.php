@@ -33,9 +33,9 @@ if (file_exists($logFile)) {
         <tbody>
             <?php foreach ($data as $entry): ?>
                 <tr>
-                    <td><?= htmlspecialchars($entry['domain']) ?></td>
-                    <td><?= $entry['count'] ?></td>
-                    <td><?= $entry['last_seen'] ?></td>
+                    <td><?= htmlspecialchars($entry['domain'] ?? 'unknown') ?></td>
+                    <td><?= (int) ($entry['count'] ?? 0) ?></td>
+                    <td><?= htmlspecialchars($entry['last_seen'] ?? '') ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
