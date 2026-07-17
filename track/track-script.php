@@ -69,7 +69,8 @@ if ($fp === false) {
     fclose($fp);
 }
 
-// Return a 1x1 transparent GIF so the tracking pixel resolves cleanly
-header('Content-Type: image/gif');
+// The pixel only needs the request to complete — respond with an empty
+// 204 instead of a decoded GIF payload (base64_decode in a file-writing
+// script is a common false positive for hosting malware scanners).
 header('Cache-Control: no-store, no-cache, must-revalidate');
-echo base64_decode('R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==');
+http_response_code(204);
